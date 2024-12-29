@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 import os
@@ -27,10 +30,9 @@ for option in options:
     
 driver = webdriver.Chrome(options = chrome_options)
 
-driver.get('http://github.com')
+driver.get('https://www.expedia.mx/')
 print('done')
-time.sleep(5)
-print(driver.title)
-
+vuelos = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="multi-product-search-form-1"]/div/div/div/div/div[1]/ul/li[2]/a/span'))).click()
+time.sleep(10)
 with open('./GitHub_Action_Results.txt', 'w') as f:
     f.write(f"This was written with a GitHub action {driver.title}")
