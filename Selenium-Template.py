@@ -21,11 +21,12 @@ options = [
   # Define window size here
     #"--headless",
    "--window-size=1200,1200",
-   "--ignore-certificate-errors",
+   "--ignore-certificate-errors"
 ]
 
 for option in options:
     chrome_options.add_argument(option)
+
 
     
 driver = webdriver.Chrome(options = chrome_options)
@@ -33,12 +34,25 @@ driver = webdriver.Chrome(options = chrome_options)
 driver.get('https://www.expedia.mx/')
 print('done')
 vuelos = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="multi-product-search-form-1"]/div/div/div/div/div[1]/ul/li[2]/a/span'))).click()
-time.sleep(10)
+time.sleep(5)
+
+viaje_sencillo = driver.find_element(By.XPATH,"//span[normalize-space()='Viaje sencillo']").click()
+time.sleep(.5)
+origen = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"//button[@aria-label='Origen']"))).click()
+time.sleep(.5)
+tepic = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"//input[@id='origin_select']"))).send_keys("Tepic")
+time.sleep(.5)
+select_tepic = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"//button[@aria-label='Tepic (TPQ - A. Nacional Amado Nervo) Nayarit, México']"))).click()
+time.sleep(.5)
+destino = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"//button[@aria-label='Destino']"))).click()
+time.sleep(.5)
 
 #xpath viaje sencillo //span[normalize-space()='Viaje sencillo']
 #xpath boton origen //button[@aria-label='Origen']
 #xpath input origen //input[@id='origin_select']
 #xpath tepic //button[@aria-label='Tepic (TPQ - A. Nacional Amado Nervo) Nayarit, México']
+
+
 #xpath boton destino //button[@aria-label='Destino']
 #xpath input destino //input[@id='destination_select']
 #xpath cdmx //button[@aria-label='Ciudad de México (MEX - Aeropuerto Internacional de la Ciudad de México) México']
@@ -50,5 +64,10 @@ time.sleep(10)
 #xpath listings //li[@data-test-id='offer-listing']
 
 #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
+
+
+
+driver.quit()
+
 with open('./GitHub_Action_Results.txt', 'w') as f:
     f.write(f"This was written with a GitHub action {driver.title}")
