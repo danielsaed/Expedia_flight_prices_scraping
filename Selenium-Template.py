@@ -47,7 +47,6 @@ try:
   driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
   print('done')
 
-
   vuelos = WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//li[@data-test-id='offer-listing'][1]//div/button/span")))
   print(vuelos.text)
   time.sleep(5)
