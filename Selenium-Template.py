@@ -15,10 +15,13 @@ from fake_useragent import UserAgent
 
 def use_xpath(xpath,time):
     return WebDriverWait(driver, time).until(EC.presence_of_element_located((By.XPATH, xpath)))
+
+def random_delay(start=1, end=3):
+    time.sleep(random.uniform(start, end))
     
 
-display = Display(visible=0, size=(800, 800))  
-display.start()
+#display = Display(visible=0, size=(800, 800))  
+#display.start()
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
@@ -52,16 +55,24 @@ quantity_flights= 0
 use_xpath("//li[@data-test-id='offer-listing'][1]//div/button/span",180)
 
 try:
-  while True:
+    while True:
       
-      price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/div/section/span",2)
-      tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[2]/div",2)
-      use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]//div/button/span",2)
-      use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]//div/button/span",2)
-      quantity_flights += 1
+        price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/div/section/span",2)
+        tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[2]/div",2)
+        aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[3]/div[2]",2)
+        horario = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]",2)
+        random_delay(0.5, 2)
+        quantity_flights += 1
+
+        print("El precio del vuelo es: ",price.text)
+        print("El tiempo y tipo de vuelo es: ",tiempo.text)
+        print("La aerolinea es: ",aerolinea.text)
+        print("El horario es: ",horario.text)
       
-finally:
+except:
     print(f"Se encontraron {quantity_flights} vuelos")
+
+
 
 vuelos = use_xpath("//li[@data-test-id='offer-listing'][1]//div/button/span",60)
 # precio //li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[2]/div/div/section/span
