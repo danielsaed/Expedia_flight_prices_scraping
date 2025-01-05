@@ -19,8 +19,8 @@ def use_xpath(xpath,time):
 def random_delay(start=1, end=3):
     time.sleep(random.uniform(start, end))
 
-#display = Display(visible=0, size=(800, 800))  
-#display.start()
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
 chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists
                                     # and if it doesn't exist, download it automatically,
