@@ -27,7 +27,7 @@ quantity_flights= 0
 
 
 
-chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
+#chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
 ua = UserAgent()
 user_agent = ua.random
 
@@ -47,23 +47,29 @@ options = [
 for option in options:
     chrome_options.add_argument(option)
 
-'''chromedriver_path = r"C:/path/to/your/chromedriver.exe"
-driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)'''
+chromedriver_path = r"C:/Users/saedi/Documentos/Github/flight_prices_check/chromedriver.exe"
+#driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)'''
 
 
-driver = uc.Chrome(options=chrome_options)
+driver = uc.Chrome(executable_path=chromedriver_path,options=chrome_options)
 driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
-
+print('aaa')
 use_xpath("//li[@data-test-id='offer-listing'][1]//div/button/span",180)
 
 try:
     while True:
-        print(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/div/section/span")
+        
+        print(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/div/section/span")
+        time.sleep(60)
 
-        price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/div/section/span", 120)
-        tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[2]/div", 120)
-        aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[3]/div[2]", 120)
-        horario = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]", 120)
+        try:
+            price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 60)
+        except:
+            price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/section/span[2]", 60)
+
+        tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[2]/div", 120)
+        aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[3]/span", 120)
+        horario = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[1]/div[1]/span", 120)
 
         dict_[str(quantity_flights + 1)] = {
             "price": price.text,
