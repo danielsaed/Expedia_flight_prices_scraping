@@ -54,6 +54,7 @@ chromedriver_path = r"C:/Users/saedi/Documentos/Github/flight_prices_check/chrom
 driver = uc.Chrome(executable_path=chromedriver_path,options=chrome_options)
 driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
 print('aaa')
+
 use_xpath("//li[@data-test-id='offer-listing'][1]//div/button/span",180)
 
 try:
@@ -67,8 +68,20 @@ try:
         except:
             price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/section/span[2]", 60)
 
-        tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[2]/div", 120)
-        aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[3]/span", 120)
+        try:
+            tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[2]/div", 5)
+        except:
+            tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/span[1]", 5)
+            
+        #//li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[2]/div/span[1]
+        #//li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[2]/div/span[3]
+
+        try:
+            #//li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div
+            aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[3]/span", 5)
+        except:
+            aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div", 5)
+
         horario = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[1]/div[1]/span", 120)
 
         dict_[str(quantity_flights + 1)] = {
