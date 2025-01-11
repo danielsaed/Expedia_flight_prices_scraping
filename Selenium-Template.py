@@ -27,7 +27,7 @@ quantity_flights= 0
 
 
 
-#chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
+chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
 ua = UserAgent()
 user_agent = ua.random
 
@@ -51,38 +51,37 @@ chromedriver_path = r"C:/Users/saedi/Documentos/Github/flight_prices_check/chrom
 #driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)'''
 
 
-driver = uc.Chrome(executable_path=chromedriver_path,options=chrome_options)
+#driver = uc.Chrome(executable_path=chromedriver_path,options=chrome_options)
+driver = uc.Chrome(options=chrome_options)
 driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
-print('aaa')
 
-use_xpath("//li[@data-test-id='offer-listing'][1]//div/button/span",180)
+use_xpath("//li[@data-test-id='offer-listing']",180)
+elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
+
+# Get the count of elements
+count = len(elements)
+print(count)
 
 try:
-    while True:
-        
-        print(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/div/section/span")
-        time.sleep(60)
+    for i in range(count):
 
         try:
-            price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 60)
+            price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 15)
         except:
-            price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/section/span[2]", 60)
+            price = use_xpath(f"(//div[@data-test-id='price-column'])[{quantity_flights+1}]/div/section/span[2]", 15)
 
         try:
-            tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[2]/div", 5)
+            tiempo = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[1]", 5)
         except:
             tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/span[1]", 5)
             
-        #//li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[2]/div/span[1]
-        #//li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[2]/div/span[3]
 
         try:
-            #//li[@data-test-id='offer-listing'][1]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div
-            aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div[3]/span", 5)
+            aerolinea = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[3]/div", 5)
         except:
             aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div", 5)
 
-        horario = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div[1]/div[1]/span", 120)
+        horario = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
 
         dict_[str(quantity_flights + 1)] = {
             "price": price.text,
@@ -100,6 +99,8 @@ except Exception as e:
     tb = traceback.extract_tb(e.__traceback__)
     print(f"Error occurred in line: {tb[-1].lineno}")
 
+print(f"Se encontraron {quantity_flights} vuelos")
+
 print(dict_)
 
 time.sleep(5)
@@ -112,3 +113,5 @@ with open('./GitHub_Action_Results.txt', 'w') as f:
 print('DONE')
 
 driver.close()
+
+# .//div[@data-test-id='price-column'][1]
