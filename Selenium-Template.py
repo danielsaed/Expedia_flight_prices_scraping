@@ -19,11 +19,24 @@ def use_xpath(xpath,time):
 def random_delay(start=1, end=3):
     time.sleep(random.uniform(start, end))
 
+def nayarit_mexico_generate_url(departure_date):
+    base_url = 'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:{departure_date}TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate={departure_date}&d1={departure_date}&passengers=adults:1,infantinlap:N'
+    return base_url.format(departure_date=departure_date)
+
+
+dates = ["16/02/2025","17/02/2025","18/02/2025","19/02/2025"]
+dates = list(set(dates))
+
+links = []
+
+for i in range(len(dates)):
+    links.append(nayarit_mexico_generate_url(dates[i]))
+
 #display = Display(visible=0, size=(800, 800))  
 #display.start()
 
 dict_ = {}
-quantity_flights= 0
+
 
 
 
@@ -42,7 +55,9 @@ options = [
     "--ignore-certificate-errors",
     "--lang=es",
     "--disable-dev-shm-usage",  # Overcome limited resource problems
-    "--no-sandbox"]  # Bypass OS security model
+    "--no-sandbox",
+    "--disable-popup-blocking"  # Disable popup blocking
+    ]  # Bypass OS security model
 
 for option in options:
     chrome_options.add_argument(option)
@@ -55,55 +70,96 @@ chromedriver_path = r"C:/Users/saedi/Documentos/Github/flight_prices_check/chrom
 driver = uc.Chrome(options=chrome_options)
 driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
 
-use_xpath("//li[@data-test-id='offer-listing']",180)
-elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
 
-# Get the count of elements
-count = len(elements)
-print(count)
+for current_link in links:
+    
+    quantity_flights=0
+    
+    driver.execute_script("window.open('');")
+    time.sleep(2)  # Wait for the new tab to open
+    print("New tab opened")
 
-try:
-    for i in range(count):
+    # Switch to the new tab
+    driver.switch_to.window(driver.window_handles[-1])
+    print("Switched to new tab")
 
-        try:
-            price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 15)
-        except:
-            price = use_xpath(f"(//div[@data-test-id='price-column'])[{quantity_flights+1}]/div/section/span[2]", 15)
+    # Open the new URL in the new tab
+    driver.get(current_link)
+    print(f"Opened URL: {current_link}")
 
-        try:
-            tiempo = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[1]", 5)
-        except:
-            tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/span[1]", 5)
-            
+    # Close the old tab
+    driver.switch_to.window(driver.window_handles[0])
+    driver.close()
+    print("Closed old tab")
 
-        try:
-            aerolinea = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[3]/div", 5)
-        except:
-            aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div", 5)
+    driver.switch_to.window(driver.window_handles[-1])
+    print("Switched back to new tab")
 
-        horario = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
+    use_xpath("//li[@data-test-id='offer-listing']",180)
+    elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
 
-        dict_[str(quantity_flights + 1)] = {
-            "price": price.text,
-            "tiempo": tiempo.text,
-            "aerolinea": aerolinea.text,
-            "horario": horario.text
-        }
+    # Get the count of elements
+    count = len(elements)
+    print(count)
 
-        quantity_flights += 1
 
-except Exception as e:
+    try:
+        for i in range(count):
+
+            dict_[str(quantity_flights + 1)] = {
+                "price": "",
+                "tiempo": "",
+                "aerolinea": "",
+                "horario": ""
+            }
+
+            try:
+                price = use_xpath(f"(//div[@data-test-id='price-column'])[{quantity_flights+1}]/div/section/span[2]", 15)
+                dict_[str(quantity_flights + 1)]["price"] = price.text
+                
+            except:
+                #price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 15)
+                print("No se encontro el precio")
+                dict_[str(quantity_flights + 1)]["price"] = "no se encontro el precio"
+
+            try:
+                tiempo = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[1]", 5)
+                dict_[str(quantity_flights + 1)]["tiempo"] = tiempo.text
+            except:
+                print("No se encontro el tiempo")
+                dict_[str(quantity_flights + 1)]["tiempo"] = "no se encontro el tiempo"
+                #tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/span[1]", 5)
+                
+            try:
+                aerolinea = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[3]/div", 5)
+                dict_[str(quantity_flights + 1)]["aerolinea"] = aerolinea.text
+            except:
+                print("No se encontro aerolinea")
+                dict_[str(quantity_flights + 1)]["aerolinea"] = "no se encontro el aerolinea"
+                #aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div", 5)
+
+            try:
+                horario = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
+                dict_[str(quantity_flights + 1)]["horario"] = horario.text
+            except:
+                print("No se encontro horario")
+                dict_[str(quantity_flights + 1)]["horario"] = "no se encontro el horario"
+
+
+            quantity_flights += 1
+
+    except Exception as e:
+        print(f"Se encontraron {quantity_flights} vuelos")
+        print("An error occurred:")
+        traceback.print_exc()
+        tb = traceback.extract_tb(e.__traceback__)
+        print(f"Error occurred in line: {tb[-1].lineno}")
+
     print(f"Se encontraron {quantity_flights} vuelos")
-    print("An error occurred:")
-    traceback.print_exc()
-    tb = traceback.extract_tb(e.__traceback__)
-    print(f"Error occurred in line: {tb[-1].lineno}")
 
-print(f"Se encontraron {quantity_flights} vuelos")
+    print(dict_)
 
-print(dict_)
-
-time.sleep(5)
+    time.sleep(5)
 
 #xpath listings //li[@data-test-id='offer-listing']
 #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
