@@ -12,6 +12,8 @@ import undetected_chromedriver as uc
 import random
 from fake_useragent import UserAgent
 import traceback
+import pandas as pd
+import re
 
 def use_xpath(xpath,time):
     return WebDriverWait(driver, time).until(EC.presence_of_element_located((By.XPATH, xpath)))
@@ -24,7 +26,7 @@ def nayarit_mexico_generate_url(departure_date):
     return base_url.format(departure_date=departure_date)
 
 
-dates = ["16/02/2025","17/02/2025","18/02/2025","19/02/2025"]
+dates = ["16/01/2025","17/01/2025","18/01/2025","19/01/2025"]
 dates = list(set(dates))
 
 links = []
@@ -37,10 +39,11 @@ for i in range(len(dates)):
 
 dict_ = {}
 
-
+df = pd.DataFrame(columns=["price", "tiempo", "aerolinea", "horario","date"])
 
 
 chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
+
 ua = UserAgent()
 user_agent = ua.random
 
@@ -70,10 +73,11 @@ chromedriver_path = r"C:/Users/saedi/Documentos/Github/flight_prices_check/chrom
 driver = uc.Chrome(options=chrome_options)
 driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
 
-
+date_count=-1
 for current_link in links:
     
     quantity_flights=0
+    date_count+=1
     
     driver.execute_script("window.open('');")
     time.sleep(2)  # Wait for the new tab to open
@@ -100,7 +104,6 @@ for current_link in links:
 
     # Get the count of elements
     count = len(elements)
-    print(count)
 
 
     try:
@@ -110,12 +113,13 @@ for current_link in links:
                 "price": "",
                 "tiempo": "",
                 "aerolinea": "",
-                "horario": ""
+                "horario": "",
+                "date":dates[date_count]
             }
 
             try:
                 price = use_xpath(f"(//div[@data-test-id='price-column'])[{quantity_flights+1}]/div/section/span[2]", 15)
-                dict_[str(quantity_flights + 1)]["price"] = price.text
+                dict_[str(quantity_flights + 1)]["price"] = re.sub(r'\D', '', price.text)
                 
             except:
                 #price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 15)
@@ -145,7 +149,7 @@ for current_link in links:
                 print("No se encontro horario")
                 dict_[str(quantity_flights + 1)]["horario"] = "no se encontro el horario"
 
-
+            
             quantity_flights += 1
 
     except Exception as e:
@@ -157,9 +161,21 @@ for current_link in links:
 
     print(f"Se encontraron {quantity_flights} vuelos")
 
-    print(dict_)
+    #print(dict_)
 
     time.sleep(5)
+
+
+    
+    for ii in dict_:
+        print(list(dict_[ii].values()))
+        print(df.columns.tolist())
+        temp_df = pd.DataFrame(dict_[ii], index=[0])
+    # Ajusta las columnas al DataFrame principal si difieren
+        temp_df = temp_df.reindex(columns=df.columns)
+        df = pd.concat([df, temp_df], ignore_index=True)
+
+print(df)
 
 #xpath listings //li[@data-test-id='offer-listing']
 #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
