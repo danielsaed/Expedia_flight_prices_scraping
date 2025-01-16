@@ -1,97 +1,91 @@
-price,tiempo,aerolinea,horario,date
-3610,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,16/01/2025
-10708,10 h 41 min,Volaris,20:36,16/01/2025
-10708,9 h 34 min,Volaris,20:36,16/01/2025
-3371,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,16/01/2025
-9656,14 h 1 min,Volaris,07:00,16/01/2025
-10708,9 h 34 min,Volaris,20:36,16/01/2025
-4016,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,17/01/2025
-10708,10 h 41 min,Volaris,20:36,17/01/2025
-10708,9 h 34 min,Volaris,20:36,17/01/2025
-3255,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,17/01/2025
-9656,14 h 1 min,Volaris,07:00,17/01/2025
-11061,12 h 51 min,Volaris,08:10,17/01/2025
-2954,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:33,18/01/2025
-7908,10 h 41 min,Volaris,20:36,18/01/2025
-7908,9 h 34 min,Volaris,20:36,18/01/2025
-2856,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,15:00,18/01/2025
-8261,14 h 1 min,Volaris,07:00,18/01/2025
-7908,9 h 34 min,Volaris,20:36,18/01/2025
-3070,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:23,19/01/2025
-10708,9 h 34 min,Volaris,20:36,19/01/2025
-10708,10 h 41 min,Volaris,20:36,19/01/2025
-2856,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,19/01/2025
-7175,14 h 1 min,Volaris,07:00,19/01/2025
-8261,12 h 51 min,Volaris,08:10,19/01/2025
-2954,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:18,20/01/2025
-9303,9 h 34 min,Volaris,20:36,20/01/2025
-9303,10 h 41 min,Volaris,20:36,20/01/2025
-3088,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,20/01/2025
-11061,14 h 1 min,Volaris,07:00,20/01/2025
-9303,10 h 41 min,Volaris,20:36,20/01/2025
-2954,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,21/01/2025
-12008,9 h 34 min,Volaris,20:36,21/01/2025
-12008,10 h 41 min,Volaris,20:36,21/01/2025
-2856,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,21/01/2025
-5798,14 h 1 min,Volaris,07:00,21/01/2025
-12008,10 h 41 min,Volaris,20:36,21/01/2025
-2591,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:48,22/01/2025
-5445,9 h 34 min,Volaris,20:36,22/01/2025
-5445,10 h 41 min,Volaris,20:36,22/01/2025
-2982,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,15:30,22/01/2025
-5287,14 h 1 min,Volaris,07:00,22/01/2025
-5798,12 h 51 min,Volaris,08:10,22/01/2025
-2823,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,23/01/2025
-4934,9 h 34 min,Volaris,20:36,23/01/2025
-4934,10 h 41 min,Volaris,20:36,23/01/2025
-2634,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,23/01/2025
-4391,14 h 1 min,Volaris,07:00,23/01/2025
-4825,12 h 51 min,Volaris,08:10,23/01/2025
-3229,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,24/01/2025
-4472,9 h 34 min,Volaris,20:36,24/01/2025
-4472,10 h 41 min,Volaris,20:36,24/01/2025
-2518,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,24/01/2025
-4008,14 h 1 min,Volaris,07:00,24/01/2025
-4008,12 h 51 min,Volaris,08:10,24/01/2025
-2591,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:43,25/01/2025
-6032,9 h 34 min,Volaris,20:36,25/01/2025
-6032,10 h 41 min,Volaris,20:36,25/01/2025
-2518,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,15:00,25/01/2025
-4008,14 h 1 min,Volaris,07:00,25/01/2025
-5287,11 h 1 min,Volaris,10:00,25/01/2025
-2707,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:23,26/01/2025
-6822,9 h 34 min,Volaris,20:36,26/01/2025
-6822,10 h 41 min,Volaris,20:36,26/01/2025
-2518,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,26/01/2025
-3686,14 h 1 min,Volaris,07:00,26/01/2025
-6385,12 h 51 min,Volaris,08:10,26/01/2025
-2591,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:18,27/01/2025
-5445,9 h 34 min,Volaris,20:36,27/01/2025
-5445,10 h 41 min,Volaris,20:36,27/01/2025
-2750,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,27/01/2025
-4391,14 h 1 min,Volaris,07:00,27/01/2025
-5445,10 h 41 min,Volaris,20:36,27/01/2025
-2591,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,28/01/2025
-4472,9 h 34 min,Volaris,20:36,28/01/2025
-4472,10 h 41 min,Volaris,20:36,28/01/2025
-2518,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,28/01/2025
-4472,9 h 34 min,Volaris,20:36,28/01/2025
-4472,10 h 41 min,Volaris,20:36,28/01/2025
-2280,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:48,29/01/2025
-4038,9 h 34 min,Volaris,20:36,29/01/2025
-4038,10 h 41 min,Volaris,20:36,29/01/2025
-2699,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,15:30,29/01/2025
-4825,12 h 51 min,Volaris,08:10,29/01/2025
-4038,10 h 41 min,Volaris,20:36,29/01/2025
-2512,1 h 47 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08,30/01/2025
-4934,9 h 34 min,Volaris,20:36,30/01/2025
-4934,10 h 41 min,Volaris,20:36,30/01/2025
-2351,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,30/01/2025
-4391,12 h 51 min,Volaris,08:10,30/01/2025
-4934,10 h 41 min,Volaris,20:36,30/01/2025
-2918,1 h 45 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:05,31/01/2025
-4098,9 h 34 min,Volaris,20:36,31/01/2025
-4098,10 h 41 min,Volaris,20:36,31/01/2025
-2235,1 h 40 min,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50,31/01/2025
-6240,12 h 51 min,Volaris,08:10,31/01/2025
-4098,10 h 41 min,Volaris,20:36,31/01/2025
+Price,Flight Time,Stop over,Stop over place,Airline,Departure time,Date of flight,Destination place,Flight type,Class
+4016,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08:00,17/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+10870,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,17/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+10870,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,17/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+3255,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50:00,17/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+9796,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,17/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+11223,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,17/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+3378,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:33:00,18/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+8026,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,18/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+8026,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,18/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+3255,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,15:00:00,18/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+8379,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,18/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+8026,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,18/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+3070,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:23:00,19/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+10870,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,19/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+10870,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,19/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2856,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,14:50:00,19/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+7276,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,19/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+8379,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,19/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+2954,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:18:00,20/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+10870,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,20/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+10870,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,20/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+3088,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,14:50:00,20/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+11223,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,20/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+10870,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,20/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2954,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08:00,21/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+12190,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,21/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+12190,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,21/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2856,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50:00,21/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+5877,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,21/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+12190,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,21/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2954,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:48:00,22/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+5524,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,22/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+5524,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,22/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+3320,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,15:30:00,22/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+5358,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,22/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+5877,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,22/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+2823,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08:00,23/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+5005,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,23/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+5005,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,23/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2634,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,14:50:00,23/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+4448,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,23/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+5358,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,23/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+3229,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,16:08:00,24/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+4536,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,24/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+4536,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,24/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2518,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50:00,24/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+4060,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,24/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+4060,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,24/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+2591,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:43:00,25/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+6121,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,25/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+6121,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,25/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2518,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,15:00:00,25/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+3511,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,25/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+5358,,1 escala,4 h 41 min en TIJ,Volaris,10:00:00,25/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+2707,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:23:00,26/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+6923,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,26/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+6923,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,26/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2518,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,14:50:00,26/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+3733,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,26/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+6474,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,26/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+2591,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:18:00,27/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+5524,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,27/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+5524,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,27/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2750,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50:00,27/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+4889,,1 escala,7 h 41 min en TIJ,Volaris,07:00:00,27/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+5524,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,27/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2591,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08:00,28/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+4536,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,28/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+4536,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,28/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2518,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por AEROLITORAL DBA AEROMEXICO CONNECT,14:50:00,28/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+4536,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,28/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+4536,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,28/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2591,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:48:00,29/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+4095,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,29/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+4095,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,29/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2982,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,15:30:00,29/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+4889,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,29/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+4095,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,29/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2512,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:08:00,30/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+5005,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,30/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+5005,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,30/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2351,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50:00,30/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+4448,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,30/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+5005,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,30/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2918,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,16:05:00,31/01/2025,"Ciudad de Mexico, Mexico",Day flight,Economic
+4156,,1 escala,3 h 28 min en TIJ,Volaris,20:36:00,31/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+4156,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,31/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic
+2235,,Vuelo sin escalas,Stop over place not found,Aeromexico operado por Aerolitoral DBA Aeromexico Connect,14:50:00,31/01/2025,"Tepic, Nayarit, Mexico",Day flight,Economic
+6327,,1 escala,6 h 31 min en TIJ,Volaris,08:10:00,31/01/2025,"Tepic, Nayarit, Mexico",Mornig flight,Economic
+4156,,1 escala,4 h 48 min en TIJ,Volaris,20:36:00,31/01/2025,"Ciudad de Mexico, Mexico",Night flight,Economic

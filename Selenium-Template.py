@@ -91,8 +91,8 @@ def generate_dates(months):
 dates = generate_dates([1])
 
 raw_links = {
-    'cdmx':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N',
-    'tepic':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'
+    'Ciudad de Mexico, Mexico':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N',
+    'Tepic, Nayarit, Mexico':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'
 }
 links = []
 
@@ -105,7 +105,7 @@ for i in range(len(dates)):
 
 dict_ = {}
 
-df = pd.DataFrame(columns=["price", "tiempo", "aerolinea", "horario","date","place"])
+df = pd.DataFrame(columns=["Price", "Flight Time","Stop over","Stop over place","Airline", "Departure time","Date of flight","Destination place"])
 
 
 chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
@@ -175,45 +175,59 @@ try:
             for i in range(count):
 
                 dict_[str(quantity_flights + 1)] = {
-                    "price": "",
-                    "tiempo": "",
-                    "aerolinea": "",
-                    "horario": "",
-                    "date":date,
-                    "place":place
+                    "Price": "",
+                    "Flight time": "",
+                    "Stop over": "",
+                    'Stop over place':"",
+                    "Airline": "",
+                    "Departure time": "",
+                    "Date of flight":date,
+                    "Destination place":place
                 }
 
                 try:
                     price = use_xpath(f"(//div[@data-test-id='price-column'])[{quantity_flights+1}]/div/section/span[2]", 15)
-                    dict_[str(quantity_flights + 1)]["price"] = re.sub(r'\D', '', price.text)
+                    dict_[str(quantity_flights + 1)]["Price"] = re.sub(r'\D', '', price.text)
                     
                 except:
                     #price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 15)
-                    print("No se encontro el precio")
-                    dict_[str(quantity_flights + 1)]["price"] = "no se encontro el precio"
+                    print("No se encontro el Price")
+                    dict_[str(quantity_flights + 1)]["Price"] = "Price not found"
 
                 try:
-                    tiempo = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[1]", 5)
-                    dict_[str(quantity_flights + 1)]["tiempo"] = tiempo.text
+                    flight_time = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[1]", 5)
+                    dict_[str(quantity_flights + 1)]["Flight time"] = flight_time.text
                 except:
                     print("No se encontro el tiempo")
-                    dict_[str(quantity_flights + 1)]["tiempo"] = "no se encontro el tiempo"
+                    dict_[str(quantity_flights + 1)]["Flight time"] = "Flight time not found"
                     #tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/span[1]", 5)
+                try:
+                    stop_over = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[3]", 5)
+                    dict_[str(quantity_flights + 1)]["Stop over"] = stop_over.text
+                except:
+                    print("No se encontro el tiempo")
+                    dict_[str(quantity_flights + 1)]["Stop over"] = "no se encontro escala"
+                try:
+                    stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/div", 1)
+                    dict_[str(quantity_flights + 1)]["Stop over place"] = stop_over_place.text
+                except:
+                    print("No se encontro el tiempo")
+                    dict_[str(quantity_flights + 1)]["Stop over place"] = "Stop over place not found"
                     
                 try:
-                    aerolinea = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[3]/div", 5)
-                    dict_[str(quantity_flights + 1)]["aerolinea"] = aerolinea.text
+                    airline = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[3]/div", 5)
+                    dict_[str(quantity_flights + 1)]["Airline"] = airline.text
                 except:
-                    print("No se encontro aerolinea")
-                    dict_[str(quantity_flights + 1)]["aerolinea"] = "no se encontro el aerolinea"
+                    print("No se encontro Airline")
+                    dict_[str(quantity_flights + 1)]["Airline"] = "no se encontro el aerolinea"
                     #aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div", 5)
 
                 try:
-                    horario = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
-                    dict_[str(quantity_flights + 1)]["horario"] = horario.text
+                    departure_time = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
+                    dict_[str(quantity_flights + 1)]["Departure time"] = departure_time.text
                 except:
                     print("No se encontro horario")
-                    dict_[str(quantity_flights + 1)]["horario"] = "no se encontro el horario"
+                    dict_[str(quantity_flights + 1)]["horario"] = "Departure time not found"
 
                 
                 quantity_flights += 1
@@ -243,6 +257,15 @@ try:
             df = pd.concat([df, temp_df], ignore_index=True)
 
     print(df)
+
+    df['Flight type'] = ''
+    df['Class'] = 'Economic'
+
+    df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
+
+    df.loc[(df['Departure time'] >= pd.to_datetime('18:00', format='%H:%M').time()) | (df['Departure time'] < pd.to_datetime('05:00', format='%H:%M').time()), 'Flight type'] = 'Night flight'
+    df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
+    df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Mornig flight'
 
     #xpath listings //li[@data-test-id='offer-listing']
     #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
