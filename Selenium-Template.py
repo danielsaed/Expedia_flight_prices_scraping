@@ -14,6 +14,9 @@ from fake_useragent import UserAgent
 import traceback
 import pandas as pd
 import re
+from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+from datetime import datetime, timedelta
+import calendar
 
 def use_xpath(xpath,time):
     return WebDriverWait(driver, time).until(EC.presence_of_element_located((By.XPATH, xpath)))
@@ -23,16 +26,79 @@ def random_delay(start=1, end=3):
 
 def nayarit_mexico_generate_url(departure_date):
     base_url = 'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:{departure_date}TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate={departure_date}&d1={departure_date}&passengers=adults:1,infantinlap:N'
+    
     return base_url.format(departure_date=departure_date)
 
 
-dates = ["16/01/2025","17/01/2025","18/01/2025","19/01/2025"]
-dates = list(set(dates))
+def generate_dynamic_url(base_url, new_departure_date):
+    # Parse the URL
+    url_parts = urlparse(base_url)
+    query_params = parse_qs(url_parts.query)
+    
+    # Convert new_departure_date to different formats
+    new_departure_date_slash = new_departure_date.replace('-', '/')
+    new_departure_date_dash = new_departure_date
+    
+    # Update the departure date in the query parameters
+    for key in query_params:
+        query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
+        query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
+    
+    # Reconstruct the URL with updated query parameters
+    updated_query = urlencode(query_params, doseq=True)
+    updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
+    
+    return updated_url
+#llllllll = 'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'
+def generate_dates(months):
+    # Fecha actual
+    today = datetime.today()
+    
+    # Diccionario para mapear nombres y abreviaturas de meses a números
+    month_map = {
+        'january': 1, 'jan': 1, '01': 1, '1': 1,
+        'february': 2, 'feb': 2, '02': 2, '2': 2,
+        'march': 3, 'mar': 3, '03': 3, '3': 3,
+        'april': 4, 'apr': 4, '04': 4, '4': 4,
+        'may': 5, '05': 5, '5': 5,
+        'june': 6, 'jun': 6, '06': 6, '6': 6,
+        'july': 7, 'jul': 7, '07': 7, '7': 7,
+        'august': 8, 'aug': 8, '08': 8, '8': 8,
+        'september': 9, 'sep': 9, '09': 9, '9': 9,
+        'october': 10, 'oct': 10, '10': 10,
+        'november': 11, 'nov': 11, '11': 11,
+        'december': 12, 'dec': 12, '12': 12
+    }
+    
+    # Lista para almacenar las fechas generadas
+    dates = []
+    
+    # Iterar sobre la lista de meses de entrada
+    for month in months:
+        month_str = str(month).strip().lower()
+        if month_str in month_map:
+            month_num = month_map[month_str]
+            year = today.year
+            
+            # Generar fechas para cada día del mes especificado
+            for day in range(1, calendar.monthrange(year, month_num)[1] + 1):
+                date = datetime(year, month_num, day)
+                if date >= today:
+                    dates.append(date.strftime("%d/%m/%Y"))
+    
+    return dates
 
+dates = generate_dates([1])
+
+raw_links = {
+    'cdmx':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N',
+    'tepic':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'
+}
 links = []
 
 for i in range(len(dates)):
-    links.append(nayarit_mexico_generate_url(dates[i]))
+    for key in raw_links:
+        links.append([generate_dynamic_url(raw_links[key],dates[i]),dates[i],key])
 
 #display = Display(visible=0, size=(800, 800))  
 #display.start()
@@ -74,11 +140,9 @@ try:
     driver = uc.Chrome(options=chrome_options)
     driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
 
-    date_count=-1
-    for current_link in links:
+    for current_link,date,place in links:
         
         quantity_flights=0
-        date_count+=1
         
         driver.execute_script("window.open('');")
         time.sleep(2)  # Wait for the new tab to open
@@ -115,7 +179,8 @@ try:
                     "tiempo": "",
                     "aerolinea": "",
                     "horario": "",
-                    "date":dates[date_count]
+                    "date":date,
+                    "place":place
                 }
 
                 try:
