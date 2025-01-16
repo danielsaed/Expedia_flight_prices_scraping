@@ -105,7 +105,7 @@ for i in range(len(dates)):
 
 dict_ = {}
 
-df = pd.DataFrame(columns=["price", "tiempo", "aerolinea", "horario","date"])
+df = pd.DataFrame(columns=["price", "tiempo", "aerolinea", "horario","date","place"])
 
 
 chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
