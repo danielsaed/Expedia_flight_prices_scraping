@@ -181,9 +181,8 @@ try:
 
     #xpath listings //li[@data-test-id='offer-listing']
     #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
+    df.to_csv("Output_data.csv", index=False)
 
-    with open('./GitHub_Action_Results.txt', 'w') as f:
-        f.write(f"This was written with a GitHub action {driver.title}")
     print('DONE')
 finally:
     driver.quit()
