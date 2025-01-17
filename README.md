@@ -18,7 +18,7 @@ The dashboard presents the following insights:
 - Interactive filters for origin, destination, airline, and month.
 
 ### Dashboard Preview
-![Dashboard Screenshot](.github\img\Expedia_flight_dasboard.png)
+![Dashboard Screenshot](https://github.com/danielsaed/Expedia_flight_prices_scraping/blob/Development-using-undetected_chromedriver/.github/img/Expedia_flight_dasboard.png?raw=true)
 
 [View Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYjI4ZjI4MjEtNDcwNC00N2RiLWFjNjMtZGY2YTc1YmI3NGUyIiwidCI6IjZjMGMxMTZhLWJmOGItNDc4My04NjI3LTNjZTVmMDE0MjhlNCIsImMiOjR9)
 
