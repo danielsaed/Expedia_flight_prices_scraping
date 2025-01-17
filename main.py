@@ -269,7 +269,7 @@ try:
 
     #xpath listings //li[@data-test-id='offer-listing']
     #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
-    df.to_csv("Output_data.csv", index=False)
+    df.to_csv("flights_data.csv", index=False)
 
     print('DONE')
 finally:
