@@ -41,7 +41,7 @@ input_dates = ["jan","feb","march"]
 
 #validating the input
 validate_flight_data(dic_input_flight_links)
-dates = validate_and_convert_dates(input_dates)
+validate_dates(input_dates)
 
 
 #init variables

@@ -61,7 +61,7 @@ def validate_flight_data(flight_data):
         print(f"Valid entry for key {key}: {value}")
 
 # Function to validate and convert input dates
-def validate_and_convert_dates(dates):
+def validate_dates(dates):
     """
     Validates and converts input dates to month numbers.
 
@@ -96,7 +96,6 @@ def validate_and_convert_dates(dates):
             print(f"Invalid date: {date}")
             sys.exit(1)
     
-    return validated_dates
 
 # Function to generate a random delay
 def random_delay(start=1, end=3):
