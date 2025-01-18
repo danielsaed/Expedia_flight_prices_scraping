@@ -29,7 +29,7 @@ dic_input_flight_links = {
 }
 
 #input the months that you want to search, can be in any format, numbers, short name or long name
-input_dates = ["jan","feb","march"]
+input_dates = ["jan","feb",'03']
 
 
 #----------------------------------------#
@@ -90,7 +90,7 @@ for i in range(len(dates)):
 try:
     #initialize the driver
     driver = uc.Chrome(options=chrome_options)
-    driver.get(dates[0])
+    driver.get(links[0][0])
 
     for current_link,date,origin,arrival in links:
         
@@ -117,6 +117,7 @@ try:
         print("Switched back to new tab")
 
         use_xpath("//li[@data-test-id='offer-listing']",180)
+        time.sleep(5)
         elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
 
         # Get the count of elements
