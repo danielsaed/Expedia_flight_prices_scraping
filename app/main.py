@@ -1,120 +1,63 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
-import os
 import time
 import undetected_chromedriver as uc
-import random
 from fake_useragent import UserAgent
 import traceback
 import pandas as pd
 import re
-from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
-from datetime import datetime, timedelta
-import calendar
+from functions import *
+
 
 def use_xpath(xpath,time):
     return WebDriverWait(driver, time).until(EC.presence_of_element_located((By.XPATH, xpath)))
 
-def random_delay(start=1, end=3):
-    time.sleep(random.uniform(start, end))
-
-def nayarit_mexico_generate_url(departure_date):
-    base_url = 'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:{departure_date}TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate={departure_date}&d1={departure_date}&passengers=adults:1,infantinlap:N'
-    
-    return base_url.format(departure_date=departure_date)
 
 
-def generate_dynamic_url(base_url, new_departure_date):
-    # Parse the URL
-    url_parts = urlparse(base_url)
-    query_params = parse_qs(url_parts.query)
-    
-    # Convert new_departure_date to different formats
-    new_departure_date_slash = new_departure_date.replace('-', '/')
-    new_departure_date_dash = new_departure_date
-    
-    # Update the departure date in the query parameters
-    for key in query_params:
-        query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
-        query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
-    
-    # Reconstruct the URL with updated query parameters
-    updated_query = urlencode(query_params, doseq=True)
-    updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
-    
-    return updated_url
-#llllllll = 'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'
-def generate_dates(months):
-    # Fecha actual
-    today = datetime.today()
-    
-    # Diccionario para mapear nombres y abreviaturas de meses a números
-    month_map = {
-        'january': 1, 'jan': 1, '01': 1, '1': 1,
-        'february': 2, 'feb': 2, '02': 2, '2': 2,
-        'march': 3, 'mar': 3, '03': 3, '3': 3,
-        'april': 4, 'apr': 4, '04': 4, '4': 4,
-        'may': 5, '05': 5, '5': 5,
-        'june': 6, 'jun': 6, '06': 6, '6': 6,
-        'july': 7, 'jul': 7, '07': 7, '7': 7,
-        'august': 8, 'aug': 8, '08': 8, '8': 8,
-        'september': 9, 'sep': 9, '09': 9, '9': 9,
-        'october': 10, 'oct': 10, '10': 10,
-        'november': 11, 'nov': 11, '11': 11,
-        'december': 12, 'dec': 12, '12': 12
-    }
-    
-    # Lista para almacenar las fechas generadas
-    dates = []
-    
-    # Iterar sobre la lista de meses de entrada
-    for month in months:
-        month_str = str(month).strip().lower()
-        if month_str in month_map:
-            month_num = month_map[month_str]
-            year = today.year
-            
-            # Generar fechas para cada día del mes especificado
-            for day in range(1, calendar.monthrange(year, month_num)[1] + 1):
-                date = datetime(year, month_num, day)
-                if date >= today:
-                    dates.append(date.strftime("%d/%m/%Y"))
-    
-    return dates
-
-dates = generate_dates([1])
-
-raw_links = {
-    'Ciudad de Mexico, Mexico':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N',
-    'Tepic, Nayarit, Mexico':'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'
+#-----------------INPUT------------------#
+'''
+Input the flight data with the links of the flight with the next format:
+    -key: the number of the flight
+    -value: a list with the next format: [origin place, destination place, link of the flight]
+'''
+dic_input_flight_links = {
+    1:['Tepic','Ciudad de México','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N'],
+    2:['Ciudad de México','Tepic','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N']
 }
+
+#input the months that you want to search, can be in any format, numbers, short name or long name
+input_dates = ["jan","feb","march"]
+
+
+#----------------------------------------#
+
+
+
+
+#-----------------CONFIGURATION------------------#
+
+#validating the input
+validate_flight_data(dic_input_flight_links)
+dates = validate_and_convert_dates(input_dates)
+
+
+#init variables
 links = []
-
-for i in range(len(dates)):
-    for key in raw_links:
-        links.append([generate_dynamic_url(raw_links[key],dates[i]),dates[i],key])
-
-#display = Display(visible=0, size=(800, 800))  
-#display.start()
-
 dict_ = {}
 
-df = pd.DataFrame(columns=["Price", "Flight time","Stop over","Stop over place","Airline", "Departure time","Date of flight","Destination place"])
+#generate dates
+dates = generate_dates(input_dates)
 
+#init dataframe
+df = pd.DataFrame(columns=["Price", "Flight time","Stop over","Stop over place","Airline", "Departure time","Date of flight","Destination place","Origin place"])
 
+#options for the browser
 chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
-
 ua = UserAgent()
 user_agent = ua.random
-
-
-
 chrome_options = uc.ChromeOptions()
 chrome_options.add_argument(f"user-agent={user_agent}")
 
@@ -126,21 +69,30 @@ options = [
     "--disable-dev-shm-usage",  # Overcome limited resource problems
     "--no-sandbox",
     "--disable-popup-blocking"  # Disable popup blocking
-    ]  # Bypass OS security model
+    ]
 
 for option in options:
     chrome_options.add_argument(option)
 
-chromedriver_path = r"C:/Users/saedi/Documentos/Github/flight_prices_check/chromedriver.exe"
-#driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)'''
+#generate the links, dates, the origin and arrival places
+for i in range(len(dates)):
+    for key in dic_input_flight_links:
+        links.append([generate_dynamic_url(dic_input_flight_links[key][2],dates[i]),dates[i],dic_input_flight_links[key][0],dic_input_flight_links[key][1]])
+
+#display = Display(visible=0, size=(800, 800))  
+#display.start()
+#----------------------------------------#
 
 
-#driver = uc.Chrome(executable_path=chromedriver_path,options=chrome_options)
+
+
+#-----------------START AUTOMATION------------------#
 try:
+    #initialize the driver
     driver = uc.Chrome(options=chrome_options)
-    driver.get(r'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N')
+    driver.get(dates[0])
 
-    for current_link,date,place in links:
+    for current_link,date,origin,arrival in links:
         
         quantity_flights=0
         
@@ -174,6 +126,7 @@ try:
         try:
             for i in range(count):
 
+                # define the dictionary with the data of the flights
                 dict_[str(quantity_flights + 1)] = {
                     "Price": "",
                     "Flight time": "",
@@ -182,15 +135,16 @@ try:
                     "Airline": "",
                     "Departure time": "",
                     "Date of flight":date,
-                    "Destination place":place
+                    "Destination place":arrival,
+                    "Origin place":origin
                 }
 
+                #-----------------SCRAPPING DATA------------------#
                 try:
                     price = use_xpath(f"(//div[@data-test-id='price-column'])[{quantity_flights+1}]/div/section/span[2]", 15)
                     dict_[str(quantity_flights + 1)]["Price"] = re.sub(r'\D', '', price.text)
                     
                 except:
-                    #price = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[3]/div/section/span[2]", 15)
                     print("No se encontro el Price")
                     dict_[str(quantity_flights + 1)]["Price"] = "Price not found"
 
@@ -200,7 +154,6 @@ try:
                 except:
                     print("No se encontro el tiempo")
                     dict_[str(quantity_flights + 1)]["Flight time"] = "Flight time not found"
-                    #tiempo = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[2]/div/span[1]", 5)
                 try:
                     stop_over = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div/span[3]", 5)
                     dict_[str(quantity_flights + 1)]["Stop over"] = stop_over.text
@@ -228,50 +181,28 @@ try:
                 except:
                     print("No se encontro horario")
                     dict_[str(quantity_flights + 1)]["horario"] = "Departure time not found"
+                #-----------------END SCRAPPING DATA------------------#
 
-                
                 quantity_flights += 1
 
         except Exception as e:
-            print(f"Se encontraron {quantity_flights} vuelos")
+            # Print the error
             print("An error occurred:")
             traceback.print_exc()
             tb = traceback.extract_tb(e.__traceback__)
             print(f"Error occurred in line: {tb[-1].lineno}")
 
-
         print(f"Se encontraron {quantity_flights} vuelos")
 
-        #print(dict_)
+        #add the data to the dataframe
+        df = add_dict_to_df(dict_,df)
+    #-----------------END AUTOMATION------------------#
 
-        time.sleep(5)
 
+    #-----------------OUTPUT------------------#
+    generate_file(df)
+    print('Ending program')
 
-        
-        for ii in dict_:
-            print(list(dict_[ii].values()))
-            print(df.columns.tolist())
-            temp_df = pd.DataFrame(dict_[ii], index=[0])
-        # Ajusta las columnas al DataFrame principal si difieren
-            temp_df = temp_df.reindex(columns=df.columns)
-            df = pd.concat([df, temp_df], ignore_index=True)
-
-    print(df)
-
-    df['Flight type'] = ''
-    df['Class'] = 'Economic'
-
-    df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
-
-    df.loc[(df['Departure time'] >= pd.to_datetime('18:00', format='%H:%M').time()) | (df['Departure time'] < pd.to_datetime('05:00', format='%H:%M').time()), 'Flight type'] = 'Night flight'
-    df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
-    df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Mornig flight'
-
-    #xpath listings //li[@data-test-id='offer-listing']
-    #path text of the listing //li[@data-test-id='offer-listing'][1]//div/button/span
-    df.to_csv("flights_data.csv", index=False)
-
-    print('DONE')
 finally:
     driver.quit()
 
