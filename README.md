@@ -9,6 +9,27 @@ The primary objective of this project is to provide actionable insights into fli
 - **Data Storage**: Saves scraped data into a structured CSV file.
 - **Data Visualization**: Utilizes Power BI to create an interactive dashboard for analyzing flight prices.
 
+## Web Page Preview
+
+![Dashboard Screenshot](https://github.com/danielsaed/Expedia_flight_prices_scraping/blob/Development-using-undetected_chromedriver/.github/img/Expedia_web.png?raw=true)
+
+## Scraped Data
+
+Example of the csv scraped data.
+
+| Price | Flight time | Stop over | Stop over place | Airline | Departure time | Date of flight | Destination place | Origin place | Flight type | Class |
+|-------|-------------|-----------|-----------------|---------|----------------|----------------|-------------------|--------------|-------------|-------|
+| 3378  | 1 h 47 min  | Vuelo sin escalas | Stop over place not found | Aeromexico operado por Aerolitoral DBA Aeromexico Connect | 16:33:00 | 18/01/2025 | Ciudad de México | Tepic | Day flight | Economic |
+| 9592  | 10 h 41 min | 1 escala  | 4 h 48 min en TIJ | Volaris | 20:36:00 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 9592  | 9 h 34 min  | 1 escala  | 3 h 28 min en TIJ | Volaris | 20:36:00 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 3255  | 1 h 40 min  | Vuelo sin escalas | Stop over place not found | Aeromexico operado por Aerolitoral DBA Aeromexico Connect | 15:00:00 | 18/01/2025 | Tepic | Ciudad de México | Day flight | Economic |
+| 9592  | 10 h 41 min | 1 escala  | 4 h 48 min en TIJ | Volaris | 20:36:00 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 9592  | 9 h 34 min  | 1 escala  | 3 h 28 min en TIJ | Volaris | 20:36:00 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 3494  | 1 h 47 min  | Vuelo sin escalas | Stop over place not found | Aeromexico operado por Aerolitoral DBA Aeromexico Connect | 16:23:00 | 19/01/2025 | Ciudad de México | Tepic | Day flight | Economic |
+| 11042 | 9 h 34 min  | 1 escala  | 3 h 28 min en TIJ | Volaris | 20:36:00 | 19/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 11042 | 10 h 41 min | 1 escala  | 4 h 48 min en TIJ | Volaris | 20:36:00 | 19/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 3255  | 1 h 40 min  | Vuelo sin escalas | Stop over place not found | Aeromexico operado por Aerolitoral DBA Aeromexico Connect | 14:50:00 | 19/01/2025 | Tepic | Ciudad de México | Day flight | Economic |
+
 ## Dashboard
 The dashboard presents the following insights:
 - Lowest flight prices by day.
