@@ -34,7 +34,8 @@ input_dates = ["jan","feb",'03']
 
 #----------------------------------------#
 
-
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
 
 #-----------------CONFIGURATION------------------#
@@ -79,8 +80,7 @@ for i in range(len(dates)):
     for key in dic_input_flight_links:
         links.append([generate_dynamic_url(dic_input_flight_links[key][2],dates[i]),dates[i],dic_input_flight_links[key][0],dic_input_flight_links[key][1]])
 
-#display = Display(visible=0, size=(800, 800))  
-#display.start()
+
 #----------------------------------------#
 
 
