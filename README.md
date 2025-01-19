@@ -18,18 +18,15 @@ The primary objective of this project is to provide actionable insights into fli
 Example of flight data, generated on csv file.
 
 
-| **Price (MXN)** | **Flight Time** | **Stopover** | **Stopover Place**       | **Airline**                                                   | **Departure Time** | **Date**      | **Destination**      | **Origin**          | **Flight Type** | **Class**   |
-| :------------------: |-----------------|--------------|--------------------------|-------------------------------------------------------------|--------------------|---------------|-----------------------|---------------------|-----------------|-------------|
-| 3378             | 1 h 47 min     | Direct       | -                        | Aeromexico (operated by Aerolitoral)                        | 16:33             | 18/01/2025   | Ciudad de México     | Tepic               | Day flight      | Economic    |
-| 9592             | 10 h 41 min    | 1 stop       | 4 h 48 min in TIJ        | Volaris                                                     | 20:36             | 18/01/2025   | Ciudad de México     | Tepic               | Night flight    | Economic    |
-| 9592             | 9 h 34 min     | 1 stop       | 3 h 28 min in TIJ        | Volaris                                                     | 20:36             | 18/01/2025   | Ciudad de México     | Tepic               | Night flight    | Economic    |
-| 3255             | 1 h 40 min     | Direct       | -                        | Aeromexico (operated by Aerolitoral)                        | 15:00             | 18/01/2025   | Tepic               | Ciudad de México    | Day flight      | Economic    |
-| 9592             | 10 h 41 min    | 1 stop       | 4 h 48 min in TIJ        | Volaris                                                     | 20:36             | 18/01/2025   | Ciudad de México     | Tepic               | Night flight    | Economic    |
-| 9592             | 9 h 34 min     | 1 stop       | 3 h 28 min in TIJ        | Volaris                                                     | 20:36             | 18/01/2025   | Ciudad de México     | Tepic               | Night flight    | Economic    |
-| 3494             | 1 h 47 min     | Direct       | -                        | Aeromexico (operated by Aerolitoral)                        | 16:23             | 19/01/2025   | Ciudad de México     | Tepic               | Day flight      | Economic    |
-| 11042            | 9 h 34 min     | 1 stop       | 3 h 28 min in TIJ        | Volaris                                                     | 20:36             | 19/01/2025   | Ciudad de México     | Tepic               | Night flight    | Economic    |
-| 11042            | 10 h 41 min    | 1 stop       | 4 h 48 min in TIJ        | Volaris                                                     | 20:36             | 19/01/2025   | Ciudad de México     | Tepic               | Night flight    | Economic    |
-| 3255             | 1 h 40 min     | Direct       | -                        | Aeromexico (operated by Aerolitoral)                        | 14:50             | 19/01/2025   | Tepic               | Ciudad de México    | Day flight      | Economic    |
+| **Price (MXN)** | **Flight Time** | **Stopover** | **Stopover Place** | **Airline** | **Departure Time** | **Date** | **Destination** | **Origin** | **Flight Type** | **Class** |
+| :-------------: | :-------------: | :----------: | :----------------: | :---------: | :----------------: | :------: | :-------------: | :--------: | :-------------: | :-------: |
+| 3378 | 1 h 47 min | Direct | - | Aeromexico (operated by Aerolitoral) | 16:33 | 18/01/2025 | Ciudad de México | Tepic | Day flight | Economic |
+| 9592 | 10 h 41 min | 1 stop | 4 h 48 min in TIJ | Volaris | 20:36 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 9592 | 9 h 34 min | 1 stop | 3 h 28 min in TIJ | Volaris | 20:36 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 3255 | 1 h 40 min | Direct | - | Aeromexico (operated by Aerolitoral) | 15:00 | 18/01/2025 | Tepic | Ciudad de México | Day flight | Economic |
+| 9592 | 10 h 41 min | 1 stop | 4 h 48 min in TIJ | Volaris | 20:36 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 9592 | 9 h 34 min | 1 stop | 3 h 28 min in TIJ | Volaris | 20:36 | 18/01/2025 | Ciudad de México | Tepic | Night flight | Economic |
+| 3494 | 1 h 47 min | Direct | - | Aeromexico (operated by Aerolitoral) | 16:23 | 19/01/2025 | Ciudad de México | Tepic | Day flight | Economic |
 
 ## Dashboard
 The dashboard presents the following insights:
