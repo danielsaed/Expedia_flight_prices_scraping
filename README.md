@@ -1,9 +1,8 @@
 # Expedia Flight Prices Scraping
 
-This project is a solution designed to gather and analyze flight data from Expedia. By web scraping with selenium, the data is systematically extracted, organized, and stored in a structured CSV file format. The stored data is subsequently utilized to generate insightful visualizations in an interactive Power BI dashboard, enabling users to explore and analyze flight pricing trends effectively.
+This project implements an ETL (Extract, Transform, Load) process to gather and analyze flight data from Expedia. Using Selenium for web scraping, the data is systematically extracted, organized, and stored in a structured CSV file format. The collected data is then transformed and loaded into an interactive Power BI dashboard, where it is visualized to uncover insightful trends and patterns in flight pricing.
 
-## Overview
-The main goal of this project is to provide insights into flight prices by scraping data from Expedia and presenting it in an interactive dashboard. It showcases the complete process, from data collection to data visualization.
+The primary objective of this project is to provide actionable insights into flight prices by automating data collection and presenting it in an intuitive and interactive dashboard. This end-to-end solution highlights the complete workflow, from data extraction and transformation to visualization, demonstrating the integration of web scraping, data organization, and business intelligence tools.
 
 ## Features
 - **Web Scraping**: Collects flight data (e.g., origin, destination, airline, price, stopovers) from Expedia.
