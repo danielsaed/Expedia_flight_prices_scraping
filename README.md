@@ -13,7 +13,7 @@ The primary objective of this project is to provide actionable insights into fli
 
 ![Dashboard Screenshot](https://github.com/danielsaed/Expedia_flight_prices_scraping/blob/Development-using-undetected_chromedriver/.github/img/Expedia_web.png?raw=true)
 
-# Flight Prices Table
+## Flight Prices Table
 
 Example of flight data, generated on csv file.
 
