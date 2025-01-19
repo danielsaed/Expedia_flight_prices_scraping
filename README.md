@@ -17,6 +17,7 @@ The primary objective of this project is to provide actionable insights into fli
 
 Example of flight data, generated on csv file.
 
+
 | **Price (MXN)** | **Flight Time** | **Stopover** | **Stopover Place**       | **Airline**                                                   | **Departure Time** | **Date**      | **Destination**      | **Origin**          | **Flight Type** | **Class**   |
 |------------------|-----------------|--------------|--------------------------|-------------------------------------------------------------|--------------------|---------------|-----------------------|---------------------|-----------------|-------------|
 | 3378             | 1 h 47 min     | Direct       | -                        | Aeromexico (operated by Aerolitoral)                        | 16:33             | 18/01/2025   | Ciudad de México     | Tepic               | Day flight      | Economic    |
