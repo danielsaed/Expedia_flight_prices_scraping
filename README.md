@@ -17,6 +17,12 @@ The primary objective of this project is to provide actionable insights into fli
 
 Example of the csv scraped data.
 
+<style>
+table {
+  font-size: 8px;
+}
+</style>
+
 | Price | Flight time | Stop over | Stop over place | Airline | Departure time | Date of flight | Destination place | Origin place | Flight type | Class |
 |-------|-------------|-----------|-----------------|---------|----------------|----------------|-------------------|--------------|-------------|-------|
 | 3378  | 1 h 47 min  | Vuelo sin escalas | Stop over place not found | Aeromexico operado por Aerolitoral DBA Aeromexico Connect | 16:33:00 | 18/01/2025 | Ciudad de México | Tepic | Day flight | Economic |
