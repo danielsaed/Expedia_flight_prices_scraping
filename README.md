@@ -9,7 +9,7 @@ The primary objective of this project is to provide actionable insights into fli
 - **Data Storage**: Saves scraped data into a structured CSV file.
 - **Data Visualization**: Utilizes Power BI to create an interactive dashboard for analyzing flight prices.
 
-## Web Page Preview
+## Web Page Scraped Preview
 
 ![Dashboard Screenshot](https://github.com/danielsaed/Expedia_flight_prices_scraping/blob/Development-using-undetected_chromedriver/.github/img/Expedia_web.png?raw=true)
 
@@ -34,7 +34,7 @@ The dashboard presents the following insights:
 - Price trends for different destinations and airlines.
 - Interactive filters for origin, destination, airline, and month.
 
-### Dashboard Preview
+### Power BI Dashboard Preview
 ![Dashboard Screenshot](https://github.com/danielsaed/Expedia_flight_prices_scraping/blob/Development-using-undetected_chromedriver/.github/img/Expedia_flight_dasboard.png?raw=true)
 
 [View Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYjI4ZjI4MjEtNDcwNC00N2RiLWFjNjMtZGY2YTc1YmI3NGUyIiwidCI6IjZjMGMxMTZhLWJmOGItNDc4My04NjI3LTNjZTVmMDE0MjhlNCIsImMiOjR9)
