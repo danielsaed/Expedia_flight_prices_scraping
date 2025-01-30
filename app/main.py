@@ -24,18 +24,19 @@ Input the flight data with the links of the flight with the next format:
     -value: a list with the next format: [origin place, destination place, link of the flight]
 '''
 dic_input_flight_links = {
-    1:['Tepic','Ciudad de México','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N'],
-    2:['Ciudad de México','Tepic','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N']
+    #1:['Tepic','Ciudad de México','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N'],
+    #2:['Ciudad de México','Tepic','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N'],
+    3:['Ciudad de Mexico','Tokio','https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),to:Tokio,%20Jap%C3%B3n%20(TYO-Todos%20los%20aeropuertos),departure:12/02/2025TANYT,fromType:AIRPORT,toType:METROCODE&options=cabinclass:economy&fromDate=12/02/2025&d1=2025-2-12&passengers=adults:1,infantinlap:N']
 }
 
 #input the months that you want to search, can be in any format, numbers, short name or long name
-input_dates = ["jan","feb",'03']
-
+#input_dates = ["jan","feb",'03']
+input_dates = ["jan"]
 
 #----------------------------------------#
 
-display = Display(visible=0, size=(800, 800))  
-display.start()
+#display = Display(visible=0, size=(800, 800))  
+#display.start()
 
 
 #-----------------CONFIGURATION------------------#
@@ -79,8 +80,6 @@ for option in options:
 for i in range(len(dates)):
     for key in dic_input_flight_links:
         links.append([generate_dynamic_url(dic_input_flight_links[key][2],dates[i]),dates[i],dic_input_flight_links[key][0],dic_input_flight_links[key][1]])
-
-
 #----------------------------------------#
 
 
@@ -118,7 +117,8 @@ try:
 
         use_xpath("//li[@data-test-id='offer-listing']",180)
         time.sleep(5)
-        elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
+        #elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
+        elements = driver.find_elements(By.XPATH, "//li[@data-test-id='offer-listing']")
 
         # Get the count of elements
         count = len(elements)
@@ -139,6 +139,10 @@ try:
                     "Destination place":arrival,
                     "Origin place":origin
                 }
+                # airline //div[@class='uitk-spacing']/div[-]/div[2]/span[2]
+                # expand details //span[@class='uitk-expando-title']
+                # click //li[@data-test-id='offer-listing'][-]
+                # (//*[name()='svg'][@aria-label='Cerrar y volver'])[1]
 
                 #-----------------SCRAPPING DATA------------------#
                 try:
@@ -162,8 +166,16 @@ try:
                     print("No se encontro el tiempo")
                     dict_[str(quantity_flights + 1)]["Stop over"] = "no se encontro escala"
                 try:
-                    stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/div", 1)
-                    dict_[str(quantity_flights + 1)]["Stop over place"] = stop_over_place.text
+
+                    if dict_[str(quantity_flights + 1)]["Stop over"] == "2 escalas":
+                        stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/span[1]", 1)
+                        dict_[str(quantity_flights + 1)]["Stop over place"] = stop_over_place.text
+                        stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/span[3]", 1)
+                        dict_[str(quantity_flights + 1)]["Stop over place"] = dict_[str(quantity_flights + 1)]["Stop over place"] +"-"+ stop_over_place.text
+                    else:
+
+                        stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/div", 1)
+                        dict_[str(quantity_flights + 1)]["Stop over place"] = stop_over_place.text
                 except:
                     print("No se encontro el tiempo")
                     dict_[str(quantity_flights + 1)]["Stop over place"] = "Stop over place not found"
@@ -177,6 +189,26 @@ try:
                     #aerolinea = use_xpath(f"//li[@data-test-id='offer-listing'][{quantity_flights+1}]/div/div/div/div/div[1]/div[1]/div/div/div[3]/div", 5)
 
                 try:
+                    departure_time = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
+                    dict_[str(quantity_flights + 1)]["Departure time"] = departure_time.text
+                except:
+                    print("No se encontro horario")
+                    dict_[str(quantity_flights + 1)]["horario"] = "Departure time not found"
+
+                try:
+                    if airline.text == "AerolÃ­neas mÃºltiples":
+                        use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 60).click()
+                        time.sleep(2)
+                        use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 60).click()
+                        
+                        if stop_over.text == "2 escalas":
+                            stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/span[1]", 1)
+                            dict_[str(quantity_flights + 1)]["Stop over place"] = stop_over_place.text
+                            stop_over_place = use_xpath(f"(//div[@data-stid='tertiary-section'])[{quantity_flights+1}]/div[2]/span[3]", 1)
+                            dict_[str(quantity_flights + 1)]["Stop over place"] = dict_[str(quantity_flights + 1)]["Stop over place"] +"-"+ stop_over_place.text
+
+
+
                     departure_time = use_xpath(f"(//div[@data-stid='secondary-section'])[{quantity_flights+1}]/div[1]/div/div/div[1]/div[1]/div", 120)
                     dict_[str(quantity_flights + 1)]["Departure time"] = departure_time.text
                 except:
