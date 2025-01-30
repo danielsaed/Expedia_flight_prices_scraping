@@ -1,51 +1,26 @@
-Price,Flight time,Stop over,Stop over place,Airline,Departure time,Date of flight,Destination place,Origin place,Airline 1,Airline 2,Airline 3,Flight type,Class,days_to_date,days to date
-16853,19 h 20 min,1,3 h 10 min en LAX,Aerolíneas múltiples,07:20:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),Aeromexico 646,Singapore Airlines 11,,Morning flight,Economic,,0
-18991,24 h 20 min,1,5 h 45 min en YYZ,Air Canada,01:10:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,0
-32302,15 h 35 min,0,Stop over place not found,Japan Airlines operado por Aeromexico,23:45:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,0
-20520,24 h 30 min,1,5 h 40 min en YYZ,Air Canada,01:10:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Economic,,0
-19636,43 h 10 min,2,Stop over place not found,Turkish Airlines,09:35:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-29653,18 h 25 min,1,2 h 5 min en DFW,Japan Airlines operado por American Airlines y Japan Airlines,06:00:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-17979,23 h 50 min,2,Stop over place not found,Air Canada,01:10:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,0
-29653,18 h 25 min,1,2 h 5 min en DFW,Aerolíneas múltiples,06:00:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),American Airlines 1066,Japan Airlines 11,,Morning flight,Economic,,0
-29653,18 h 30 min,1,2 h 20 min en DFW,Japan Airlines operado por American Airlines,06:00:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-32356,17 h 45 min,1,1 h 15 min en SFO,United,06:05:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-32394,17 h 45 min,1,1 h 15 min en SFO,Aerolíneas múltiples operado por United,06:05:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),United 820,All Nippon Airways 7011 operado por United,,Morning flight,Economic,,0
-32394,18 h 35 min,1,2 h 11 min en IAH,Aerolíneas múltiples,05:45:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),United 1085,All Nippon Airways 113,,Morning flight,Economic,,0
-32356,17 h 55 min,1,1 h 40 min en SFO,United,06:05:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-29751,19 h 25 min,1,3 h 15 min en DFW,American Airlines,08:00:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-32356,18 h 25 min,1,1 h 56 min en IAH,United,05:45:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-22952,36 h 15 min,1,17 h 25 min en YYZ,Air Canada,13:25:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Economic,,0
-32394,18 h 35 min,1,2 h 11 min en IAH,All Nippon Airways operado por United y All Nippon Airways,05:45:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-25444,30 h 40 min,2,Stop over place not found,Emirates,19:40:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,0
-29653,21 h 25 min,1,5 h 20 min en DFW,Japan Airlines operado por American Airlines,06:00:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,0
-25444,35 h 50 min,2,Stop over place not found,Emirates,19:40:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Economic,,0
-20334,26 h 10 min,2,Stop over place not found,Aerolíneas múltiples,18:10:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),United 1272,Asiana Airlines 211,Asiana Airlines 102,Night flight,Economic,,0
-32394,21 h 55 min,1,4 h 5 min en ORD,Aerolíneas múltiples,08:10:00,30/01/2025,Tokio (HND),Ciudad de México (MEX),United 1594,All Nippon Airways 111,,Morning flight,Economic,,0
-20334,29 h 45 min,2,Stop over place not found,Aerolíneas múltiples,18:10:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),United 1272,Asiana Airlines 211,Asiana Airlines 104,Night flight,Economic,,0
-20334,32 h 45 min,2,Stop over place not found,Aerolíneas múltiples,18:10:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),United 1272,Asiana Airlines 211,Asiana Airlines 106,Night flight,Economic,,0
-20334,30 h 30 min,2,Stop over place not found,Aerolíneas múltiples,13:50:00,30/01/2025,Tokio (NRT),Ciudad de México (MEX),United 718,Asiana Airlines 211,Asiana Airlines 102,Day flight,Economic,,0
-17930,30 h 40 min,1,14 h 19 min en LAX,Aerolíneas múltiples,20:00:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),Aeromexico 648,Singapore Airlines 11,,Night flight,Economic,,1
-31668,14 h 45 min,0,Stop over place not found,All Nippon Airways,00:50:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,1
-32302,15 h 35 min,0,Stop over place not found,Japan Airlines operado por Aeromexico,23:45:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,1
-22379,24 h 30 min,1,5 h 40 min en YYZ,Air Canada,01:10:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Economic,,1
-22499,32 h 5 min,2,Stop over place not found,Turkish Airlines,09:35:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-19641,43 h 10 min,2,Stop over place not found,Turkish Airlines,09:35:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-29653,18 h 25 min,1,2 h 5 min en DFW,Japan Airlines operado por American Airlines y Japan Airlines,06:00:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-22034,36 h 5 min,1,17 h 30 min en YYZ,Air Canada,13:25:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Economic,,1
-29653,18 h 30 min,1,2 h 20 min en DFW,Japan Airlines operado por American Airlines,06:00:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-18905,23 h 50 min,2,Stop over place not found,Air Canada,01:10:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,,1
-22952,36 h 15 min,1,17 h 25 min en YYZ,Air Canada,13:25:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Economic,,1
-29653,21 h 25 min,1,5 h 20 min en DFW,Japan Airlines operado por American Airlines,06:00:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-32356,17 h 55 min,1,1 h 40 min en SFO,United,06:05:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-32356,18 h 15 min,1,2 h en SFO,United operado por United y All Nippon Airways,06:05:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-32394,18 h 35 min,1,2 h 11 min en IAH,Aerolíneas múltiples,05:45:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),United 1085,All Nippon Airways 113,,Morning flight,Economic,,1
-29751,19 h 25 min,1,3 h 15 min en DFW,American Airlines,08:00:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-32356,18 h 25 min,1,1 h 56 min en IAH,United,05:45:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-32394,18 h 35 min,1,2 h 11 min en IAH,All Nippon Airways operado por United y All Nippon Airways,05:45:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-29653,31 h 30 min,1,15 h 15 min en DFW,Japan Airlines operado por American Airlines,17:00:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Economic,,1
-29870,30 h 25 min,1,5 h 55 min en MAD,Iberia,12:50:00,31/01/2025,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Economic,,1
-22141,26 h 20 min,2,Stop over place not found,Aerolíneas múltiples,06:05:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),United 820,Asiana Airlines 215,Asiana Airlines 178,Morning flight,Economic,,1
-32356,19 h 40 min,1,3 h 15 min en SFO,United operado por United y All Nippon Airways,18:10:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Economic,,1
-32394,19 h 40 min,1,3 h 15 min en SFO,Aerolíneas múltiples,18:10:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),United 1272,All Nippon Airways 107,,Night flight,Economic,,1
-32356,21 h 55 min,1,4 h 5 min en ORD,United operado por United y All Nippon Airways,08:10:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,,1
-32394,21 h 55 min,1,4 h 5 min en ORD,Aerolíneas múltiples,08:10:00,31/01/2025,Tokio (HND),Ciudad de México (MEX),United 1594,All Nippon Airways 111,,Morning flight,Economic,,1
+Price,Flight time,Stop over,Stop over place,Airline,Departure time,Date of flight,Destination place,Origin place,Airline 1,Airline 2,Airline 3,Flight type,Class,Days to date,Day of week
+17826,30 h 40 min,1,14 h 19 min en LAX,Aerolíneas múltiples,20:00:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),Aeromexico 648,Singapore Airlines 11,,Night flight,Economic,0,Friday
+31474,14 h 45 min,0,Stop over place not found,All Nippon Airways,00:50:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,0,Friday
+32104,15 h 35 min,0,Stop over place not found,Japan Airlines operado por Aeromexico,23:45:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,0,Friday
+22218,24 h 30 min,1,5 h 40 min en YYZ,Air Canada,01:10:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Economic,0,Friday
+22360,32 h 5 min,2,1 h 45 min en CUN and 4 h 40 min en IST,Turkish Airlines,09:35:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+19527,43 h 10 min,2,1 h 45 min en CUN and 15 h 55 min en IST,Turkish Airlines,09:35:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+29473,18 h 25 min,1,2 h 5 min en DFW,Japan Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+21900,36 h 5 min,1,17 h 30 min en YYZ,Air Canada,13:25:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Economic,0,Friday
+22218,36 h 15 min,1,17 h 25 min en YYZ,Air Canada,13:25:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Economic,0,Friday
+29473,18 h 30 min,1,2 h 20 min en DFW,Japan Airlines operado por American Airlines,06:00:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+18791,23 h 50 min,2,1 h 40 min en YYZ and 2 h 15 min en YVR,Air Canada,01:10:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Economic,0,Friday
+20213,23 h 55 min,2,3 h 10 min en SFO and 45 min en ICN,Aerolíneas múltiples,06:05:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),United 820,Asiana Airlines 215,Asiana Airlines 108,Morning flight,Economic,0,Friday
+20213,26 h 20 min,2,3 h 10 min en SFO and 3 h 35 min en ICN,Aerolíneas múltiples,06:05:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),United 820,Asiana Airlines 215,Asiana Airlines 178,Morning flight,Economic,0,Friday
+29473,21 h 25 min,1,5 h 20 min en DFW,Japan Airlines operado por American Airlines,06:00:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+32159,17 h 55 min,1,1 h 40 min en SFO,United,06:05:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+32196,17 h 55 min,1,1 h 40 min en SFO,Aerolíneas múltiples operado por United,06:05:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),United 820,All Nippon Airways 7013 operado por United,,Morning flight,Economic,0,Friday
+32159,18 h 35 min,1,2 h 11 min en IAH,United operado por United y All Nippon Airways,05:45:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+32196,18 h 35 min,1,2 h 11 min en IAH,Aerolíneas múltiples,05:45:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),United 1085,All Nippon Airways 113,,Morning flight,Economic,0,Friday
+29570,19 h 25 min,1,3 h 15 min en DFW,American Airlines,08:00:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+32159,18 h 25 min,1,1 h 56 min en IAH,United,05:45:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Economic,0,Friday
+29473,31 h 30 min,1,15 h 15 min en DFW,Japan Airlines operado por American Airlines,17:00:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Economic,0,Friday
+29686,30 h 25 min,1,5 h 55 min en MAD,Iberia,12:50:00,2025-01-31,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Economic,0,Friday
+32159,19 h 40 min,1,3 h 15 min en SFO,United operado por United y All Nippon Airways,18:10:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Economic,0,Friday
+32196,19 h 40 min,1,3 h 15 min en SFO,Aerolíneas múltiples,18:10:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),United 1272,All Nippon Airways 107,,Night flight,Economic,0,Friday
+43747,17 h 45 min,1,1 h 15 min en SFO,Aerolíneas múltiples operado por United,06:05:00,2025-01-31,Tokio (HND),Ciudad de México (MEX),United 820,All Nippon Airways 7011 operado por United,,Morning flight,Economic,0,Friday
