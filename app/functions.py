@@ -172,7 +172,10 @@ def generate_dates(months):
             # Generate dates for each day of the specified month
             for day in range(1, calendar.monthrange(year, month_num)[1] + 1):
                 date = datetime(year, month_num, day)
+                
                 if date >= today:
+                    print(date)
+                    print(today)
                     dates.append(date.strftime("%d/%m/%Y"))
     
     return dates
@@ -196,7 +199,7 @@ def add_dict_to_df(dict_, df):
     return df
 
 # Function to generate a CSV file with flight data
-def generate_file(df):
+def generate_file(df,page):
     """
     Generates a CSV file with flight data.
 
@@ -208,7 +211,14 @@ def generate_file(df):
     """
     df['Flight type'] = ''
     df['Class'] = 'Economic'
-    df['days_to_date'] = ''
+    df['Days to date'] = ''
+    df['Day of week'] = ''
+    df['Page'] = page
+    df['Days to date'] = df['Date of flight'].apply(count_days_to_date)
+    df['Date of flight'] = pd.to_datetime(df['Date of flight'], format='%d/%m/%Y', dayfirst=True)
+
+    # Extract the day of the week
+    df['Day of week'] = df['Date of flight'].dt.day_name()
 
     df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
 
@@ -216,8 +226,10 @@ def generate_file(df):
     df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
     df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Morning flight'
 
-    df['days to date'] = df['Date of flight'].apply(count_days_to_date)
+    
 
+    df_excel = pd.read_csv('data\\flights_data.csv')
+    df = pd.concat([df_excel, df], ignore_index=True)
     df.to_csv(r"data\\flights_data.csv", index=False)
     print('Output file generated')
 
