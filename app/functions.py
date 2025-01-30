@@ -1,4 +1,7 @@
 import sys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 import re
 import time
@@ -37,26 +40,10 @@ def validate_flight_data(flight_data):
         None: Ends the program if an invalid entry is found.
     """
     for key, value in flight_data.items():
-        # Check that the key is a number
-        if not isinstance(key, int):
-            print(f"Invalid key: {key} (must be a number)")
-            sys.exit(1)
-        
-        # Check that the value is a list with three elements
-        if not isinstance(value, list) or len(value) != 3:
-            print(f"Invalid value for key {key}: {value} (must be a list with three elements)")
-            sys.exit(1)
-        
-        origin, destination, url = value
-        
-        # Check that the first and second elements are strings
-        if not isinstance(origin, str) or not isinstance(destination, str):
-            print(f"Invalid origin or destination for key {key}: {origin}, {destination} (must be strings)")
-            sys.exit(1)
         
         # Check that the third element is a valid URL
-        if not is_valid_url(url):
-            print(f"Invalid URL for key {key}: {url}")
+        if not is_valid_url(value):
+            print(f"Invalid URL for key {key}: {value}")
             sys.exit(1)
         
         print(f"Valid entry for key {key}: {value}")
@@ -234,6 +221,7 @@ def generate_file(df):
     df.to_csv(r"data\\flights_data.csv", index=False)
     print('Output file generated')
 
+# Function to count the number of days from today to a target date
 def count_days_to_date(target_date):
     """
     Counts the number of days from today to the target date.
@@ -249,3 +237,31 @@ def count_days_to_date(target_date):
     target_date = parser.parse(target_date)
     delta = target_date - today
     return delta.days
+
+# Function to get the content inside the second pair of parentheses
+def get_second_parentheses_content(text):
+    """
+    Gets the content inside the second pair of parentheses from a string.
+
+    Args:
+        text (str): The input string.
+
+    Returns:
+        str: The content inside the second pair of parentheses, or an empty string if not found.
+    """
+    # Use regular expression to find all content inside parentheses
+    matches = re.findall(r'\(.*?\)', text)
+    # Return the content inside the second pair of parentheses if it exists
+    first_content = matches[0] if len(matches) >= 1 else ""
+    second_content = matches[1] if len(matches) >= 2 else ""
+    return first_content, second_content
+
+# 
+def use_xpath(driver,xpath,time):
+    '''
+    Function to use the xpath of an element and wait for it to appear
+    args:   
+        xpath: the xpath of the element
+        time: the time to wait for the element
+    '''
+    return WebDriverWait(driver, time).until(EC.presence_of_element_located((By.XPATH, xpath)))
