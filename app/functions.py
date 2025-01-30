@@ -6,6 +6,7 @@ import random
 import pandas as pd
 from datetime import datetime
 import calendar
+from dateutil import parser
 
 # Function to validate URLs
 def is_valid_url(url):
@@ -96,7 +97,6 @@ def validate_dates(dates):
             print(f"Invalid date: {date}")
             sys.exit(1)
     
-
 # Function to generate a random delay
 def random_delay(start=1, end=3):
     """
@@ -221,6 +221,7 @@ def generate_file(df):
     """
     df['Flight type'] = ''
     df['Class'] = 'Economic'
+    df['days_to_date'] = ''
 
     df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
 
@@ -228,5 +229,23 @@ def generate_file(df):
     df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
     df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Morning flight'
 
+    df['days to date'] = df['Date of flight'].apply(count_days_to_date)
+
     df.to_csv(r"data\\flights_data.csv", index=False)
     print('Output file generated')
+
+def count_days_to_date(target_date):
+    """
+    Counts the number of days from today to the target date.
+
+    Args:
+        target_date (str): The target date in 'yyyy-mm-dd' format.
+
+    Returns:
+        int: The number of days from today to the target date.
+    """
+    today = datetime.today()
+    #target_date = datetime.strptime(target_date, '%d-%m-%Y')
+    target_date = parser.parse(target_date)
+    delta = target_date - today
+    return delta.days
