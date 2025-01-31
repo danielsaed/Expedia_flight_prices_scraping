@@ -214,8 +214,8 @@ def generate_file(df,page):
     df['Days to date'] = ''
     df['Day of week'] = ''
     df['Page'] = page
-    df['Days to date'] = df['Date of flight'].apply(count_days_to_date)
     df['Date of flight'] = pd.to_datetime(df['Date of flight'], format='%d/%m/%Y', dayfirst=True)
+    df['Days to date'] = count_days_to_date(df['Date of flight'])
 
     # Extract the day of the week
     df['Day of week'] = df['Date of flight'].dt.day_name()
@@ -230,11 +230,12 @@ def generate_file(df,page):
 
     df_excel = pd.read_csv('data\\flights_data.csv')
     df = pd.concat([df_excel, df], ignore_index=True)
+    df.drop_duplicates()
     df.to_csv(r"data\\flights_data.csv", index=False)
     print('Output file generated')
 
 # Function to count the number of days from today to a target date
-def count_days_to_date(target_date):
+def count_days_to_date(date_series):
     """
     Counts the number of days from today to the target date.
 
@@ -245,10 +246,8 @@ def count_days_to_date(target_date):
         int: The number of days from today to the target date.
     """
     today = datetime.today()
-    #target_date = datetime.strptime(target_date, '%d-%m-%Y')
-    target_date = parser.parse(target_date)
-    delta = target_date - today
-    return delta.days
+    days_to_date = date_series.apply(lambda x: (x - today).days)
+    return days_to_date
 
 # Function to get the content inside the second pair of parentheses
 def get_second_parentheses_content(text):
