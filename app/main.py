@@ -11,13 +11,25 @@ import pandas as pd
 import re
 from functions import *
 
-def get_xpath_data(xpath,name,time):
+def get_xpath_data_to_dic(name,time):
+    for xpath in dic_xpats[name]:
+        try:
+            dic_flight_data[quantity_flights][name] = use_xpath(driver,xpath.format(quantity_flights=quantity_flights), time).text
+            return True
+        
+            
+        except:
+            dic_flight_data[quantity_flights][name] = f"{name} not found"
+    print(f"No se encontro {name} - {xpath}")
+
+def get_xpath_data_to_text(xpath,name,time):
     try:
         return use_xpath(driver,xpath, time).text
         
     except:
-        print(f"No se encontro {name}")
+        print(f"No se encontro {name} - {xpath}")
         return f"{name} not found"
+        
 
 #-----------------INPUT------------------#
 '''
@@ -27,21 +39,21 @@ Input the flight data with the links of the flight with the next format:
 '''
 
 page = "Expedia"
+
 dic_input_flight_links = {
-    #1:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tepic,%20Nayarit,%20M%C3%A9xico,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:14/01/2025TANYT,fromType:CITY,toType:AIRPORT&options=cabinclass:economy&fromDate=14/01/2025&d1=2025-1-14&passengers=adults:1,infantinlap:N',
+    1:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tokio%20(y%20alrededores),%20Tokio%20(prefectura),%20Jap%C3%B3n,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:13/02/2025TANYT,fromType:MULTICITY,toType:AIRPORT&options=cabinclass:economy&fromDate=13/02/2025&d1=2025-2-13&passengers=adults:1,infantinlap:N',
     #2:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N',
     3:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),to:Tokio,%20Jap%C3%B3n%20(TYO-Todos%20los%20aeropuertos),departure:12/02/2025TANYT,fromType:AIRPORT,toType:METROCODE&options=cabinclass:economy&fromDate=12/02/2025&d1=2025-2-12&passengers=adults:1,infantinlap:N'
 }
 
 #input the months that you want to search, can be in any format, numbers, short name or long name
-#input_dates = ["jan","feb",'03']
 input_dates = ["jan"]
+#input_dates = ["jan"]
 
 #----------------------------------------#
 
 #display = Display(visible=0, size=(800, 800))  
 #display.start()
-
 
 #-----------------CONFIGURATION------------------#
 
@@ -49,10 +61,25 @@ input_dates = ["jan"]
 validate_flight_data(dic_input_flight_links)
 validate_dates(input_dates)
 
-
 #init variables
 links = []
 dic_flight_data = {}
+quantity_flights=1
+
+dic_xpats = {
+    'Origin place': ["//div[@data-test-id='typeahead-originInput']//button"],
+    'Destination place': ["//div[@data-test-id='typeahead-destinationInput']//button"],
+    'Parentesis place': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[2]/div"],
+    'Price': ["(//div[@data-test-id='price-column'])[{quantity_flights}]/div/section/span[2]", "(//div[@data-stid='price-column'])[{quantity_flights}]/div/section/span[2]"],
+    'Flight time': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[1]"],
+    'Stop over': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[3]"],
+    'Stop over place': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[1]", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[3]"],
+    'Airline': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[3]/div"],
+    'Departure time': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[1]/div/div/div[1]/div[1]/div"],
+    'Airline 1': ["//div[@class='uitk-spacing']/div[1]/div[2]/span[2]"],
+    'Airline 2': ["//div[@class='uitk-spacing']/div[2]/div[2]/span[2]"],
+    'Airline 3': ["//div[@class='uitk-spacing']/div[3]/div[2]/span[2]"]
+    }
 
 #generate dates
 dates = generate_dates(input_dates)
@@ -86,14 +113,12 @@ for i in range(len(dates)):
         links.append([generate_dynamic_url(dic_input_flight_links[key],dates[i]),dates[i]])
 #----------------------------------------#
 
-print(links)
-
 
 #-----------------START AUTOMATION------------------#
 try:
     #initialize the driver
     driver = uc.Chrome(options=chrome_options)
-    driver.get(links[0][0])
+    #driver.get(links[0][0])
 
     for current_link,date in links:
         
@@ -143,107 +168,86 @@ try:
                     "Airline 3":""
                 }
 
-                dic_xpats = {
-                    'Origin place': ["//div[@data-test-id='typeahead-originInput']//button"],
-                    'Destination place': ["//div[@data-test-id='typeahead-destinationInput']//button"],
-                    'Parentesis place': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[2]/div"],
-                    'Price': ["(//div[@data-test-id='price-column'])[{quantity_flights}]/div/section/span[2]", "(//div[@data-stid='price-column'])[{quantity_flights}]/div/section/span[2]"],
-                    'Flight time': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[1]"],
-                    'Stop over': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[3]"],
-                    'Stop over place': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[1]", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[3]"],
-                    'Airline': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[3]/div"],
-                    'Departure time': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[1]/div/div/div[1]/div[1]/div"],
-                    'Airline 1': ["//div[@class='uitk-spacing']/div[1]/div[2]/span[2]"],
-                    'Airline 2': ["//div[@class='uitk-spacing']/div[2]/div[2]/span[2]"],
-                    'Airline 3': ["//div[@class='uitk-spacing']/div[3]/div[2]/span[2]"]
-                    }
-
-
                 #-----------------SCRAPPING DATA------------------#
 
                 #-- get Origin place
-                dic_flight_data[quantity_flights]["Origin place"] = re.sub(r'\(.*?\)', '', get_xpath_data(f"//div[@data-test-id='typeahead-originInput']//button", "Origin place", 60)).strip()
-
+                get_xpath_data_to_dic("Origin place", 3)
 
                 #-- get Destination place
-                dic_flight_data[quantity_flights]["Destination place"] = re.sub(r'\(.*?\)', '', get_xpath_data(f"//div[@data-test-id='typeahead-destinationInput']//button", "Destination place", 60)).strip()
-
+                get_xpath_data_to_dic(f"Destination place", 3)
 
                 #-- get the content of the second parentheses
-                first,second = get_second_parentheses_content(get_xpath_data(f"(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[2]/div", "Parentesis place", 5))
+                get_xpath_data_to_dic("Parentesis place", 3)
 
+                #-- get Price
+                get_xpath_data_to_dic("Price", 1)
+
+                #-- get Flight time
+                get_xpath_data_to_dic("Flight time", 3)
+
+                #-- get Stop over
+                get_xpath_data_to_dic("Stop over", 3)
+
+                #-- get Airline
+                get_xpath_data_to_dic("Airline", 3)
+
+                #-- get Departure time
+                get_xpath_data_to_dic("Departure time", 3)
+
+
+                #----------------------DATA PREPROCESSING----------------------#
+                dic_flight_data[quantity_flights]["Origin place"] = re.sub(r'\(.*?\)', '',dic_flight_data[quantity_flights]["Origin place"]).strip()
+
+                dic_flight_data[quantity_flights]["Destination place"] = re.sub(r'\(.*?\)', '',dic_flight_data[quantity_flights]["Destination place"]).strip()
+
+                first,second = get_second_parentheses_content(dic_flight_data[quantity_flights]["Parentesis place"])
                 dic_flight_data[quantity_flights]["Origin place"] = dic_flight_data[quantity_flights]["Origin place"] + " " + first
                 dic_flight_data[quantity_flights]["Destination place"] = dic_flight_data[quantity_flights]["Destination place"] + " " + second
 
-
-                #-- get Price
-                dic_flight_data[quantity_flights]["Price"] = get_xpath_data(f"(//div[@data-test-id='price-column'])[{quantity_flights}]/div/section/span[2]","Price",3)
-
-                if dic_flight_data[quantity_flights]["Price"] == "Price not found":
-                    dic_flight_data[quantity_flights]["Price"] = get_xpath_data(f"(//div[@data-stid='price-column'])[{quantity_flights}]/div/section/span[2]","Price",3)
-
                 dic_flight_data[quantity_flights]["Price"] = re.sub(r'\D', '', dic_flight_data[quantity_flights]["Price"])
-
-
-                #-- get Flight time
-                dic_flight_data[quantity_flights]["Flight time"] = get_xpath_data(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[1]","Flight time",5)
-
-
-                #-- get Stop over
-                dic_flight_data[quantity_flights]["Stop over"] = get_xpath_data(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[3]","Stop over",5)
 
                 if dic_flight_data[quantity_flights]["Stop over"] == "1 escala":
                     dic_flight_data[quantity_flights]["Stop over"] = 1
-                    dic_flight_data[quantity_flights]["Stop over place"] = get_xpath_data(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div","Stop over place",5)
+                    dic_flight_data[quantity_flights]["Stop over place"] = get_xpath_data_to_text(dic_xpats['Stop over place'][0].format(quantity_flights=quantity_flights),"Stop over place", 3)
+
                 elif dic_flight_data[quantity_flights]["Stop over"] == "2 escalas":
                     dic_flight_data[quantity_flights]["Stop over"] = 2
-                    dic_flight_data[quantity_flights]["Stop over place"] = get_xpath_data(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[1]","Stop over place",5) + " and " + get_xpath_data(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[3]","Stop over place",5)
+                    dic_flight_data[quantity_flights]["Stop over place"] = get_xpath_data_to_text(dic_xpats['Stop over place'][1].format(quantity_flights=quantity_flights),"Stop over place",3) + " and " + get_xpath_data_to_text(dic_xpats['Stop over place'][2].format(quantity_flights=quantity_flights),"Stop over place",3)
 
                 elif dic_flight_data[quantity_flights]["Stop over"] == 'Vuelo sin escalas':
                     dic_flight_data[quantity_flights]["Stop over"] = 0
-                    dic_flight_data[quantity_flights]["Stop over place"] = get_xpath_data(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div","Stop over place",5)
+                    dic_flight_data[quantity_flights]["Stop over place"] = get_xpath_data_to_text(f"(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div","Stop over place",3)
 
-                #-- get Airline
-                dic_flight_data[quantity_flights]["Airline"] = get_xpath_data(f"(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[3]/div","Airline",5)
-
-
-                #-- get Departure time
-                dic_flight_data[quantity_flights]["Departure time"] = get_xpath_data(f"(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[1]/div/div/div[1]/div[1]/div","Departure time",5)
-
-
+                
                 #-- get Airline 1, Airline 2, Airline 3
                 #if the airline is multiple
                 if "ltiples" in dic_flight_data[quantity_flights]["Airline"]:
                     
                     print("Aerolineas multiples")
                     try:
-                        use_xpath(driver,f"//li[@data-test-id='offer-listing'][{quantity_flights}]", 60).click()
+                        use_xpath(driver,f"//li[@data-test-id='offer-listing'][{quantity_flights}]", 10).click()
                         time.sleep(1)
-                        use_xpath(driver,f"//span[@class='uitk-expando-title']", 60).click()
+                        use_xpath(driver,f"//span[@class='uitk-expando-title']", 10).click()
                         time.sleep(1)
 
                         if dic_flight_data[quantity_flights]["Stop over"] == 1:
-                            dic_flight_data[quantity_flights]["Airline 1"] = get_xpath_data(f"//div[@class='uitk-spacing']/div[1]/div[2]/span[2]","Airline 1",5)
-                            dic_flight_data[quantity_flights]["Airline 2"] = get_xpath_data(f"//div[@class='uitk-spacing']/div[2]/div[2]/span[2]","Airline 2",5)
-
+                            get_xpath_data_to_dic("Airline 1", 3)
+                            get_xpath_data_to_dic("Airline 2", 3)
                         
                         if dic_flight_data[quantity_flights]["Stop over"] == 2:
-                            dic_flight_data[quantity_flights]["Airline 1"] = get_xpath_data(f"//div[@class='uitk-spacing']/div[1]/div[2]/span[2]","Airline 1",5)
-                            dic_flight_data[quantity_flights]["Airline 2"] = get_xpath_data(f"//div[@class='uitk-spacing']/div[2]/div[2]/span[2]","Airline 2",5)
-                            dic_flight_data[quantity_flights]["Airline 3"] = get_xpath_data(f"//div[@class='uitk-spacing']/div[3]/div[2]/span[2]","Airline 3",5)
+                            get_xpath_data_to_dic("Airline 1", 3)
+                            get_xpath_data_to_dic("Airline 2", 3)
+                            get_xpath_data_to_dic("Airline 3", 3)
 
-                        use_xpath(driver,f"(//*[name()='svg'][@aria-label='Cerrar y volver'])[1]", 60).click()
+                        use_xpath(driver,f"(//*[name()='svg'][@aria-label='Cerrar y volver'])[1]", 10).click()
 
                     except Exception as e:
-                        # Print the error
-                        print("An error occurred:")
                         traceback.print_exc()
                         tb = traceback.extract_tb(e.__traceback__)
                         print(f"Error occurred in line: {tb[-1].lineno}")
-
             
                 #-----------------END SCRAPPING DATA------------------#
-
+                
                 quantity_flights += 1
 
         except Exception as e:
@@ -253,11 +257,13 @@ try:
             tb = traceback.extract_tb(e.__traceback__)
             print(f"Error occurred in line: {tb[-1].lineno}")
 
-        print(f"Se encontraron {quantity_flights} vuelos")
+        print(f"Se encontraron {quantity_flights-1} vuelos")
 
         #add the data to the dataframe
+        df = add_dict_to_df(dic_flight_data,df)
         #df = add_dict_to_df(dic_flight_data,df)
     #-----------------END AUTOMATION------------------#
+
 
     #-----------------OUTPUT------------------#
 except Exception as e:
@@ -269,7 +275,6 @@ except Exception as e:
 
 finally:
     try:
-        df = add_dict_to_df(dic_flight_data,df)
         generate_file(df,page)
     except:
         print("Error al generar el archivo")
@@ -278,5 +283,3 @@ finally:
         driver.quit()
     except:
         print("Error al cerrar el driver")
-
-# .//div[@data-test-id='price-column'][1]
