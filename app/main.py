@@ -38,8 +38,6 @@ Input the flight data with the links of the flight with the next format:
     -value: a list with the next format: [origin place, destination place, link of the flight]
 '''
 
-page = "Expedia"
-
 dic_input_flight_links = {
     1:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tokio%20(y%20alrededores),%20Tokio%20(prefectura),%20Jap%C3%B3n,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:13/02/2025TANYT,fromType:MULTICITY,toType:AIRPORT&options=cabinclass:economy&fromDate=13/02/2025&d1=2025-2-13&passengers=adults:1,infantinlap:N',
     #2:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N',
@@ -47,7 +45,7 @@ dic_input_flight_links = {
 }
 
 #input the months that you want to search, can be in any format, numbers, short name or long name
-input_dates = ["jan"]
+input_dates = ["feb"]
 #input_dates = ["jan"]
 
 #----------------------------------------#
@@ -67,6 +65,7 @@ dic_flight_data = {}
 quantity_flights=1
 
 dic_xpats = {
+    'Class':["//button[@data-test-id='flights-cabin-class-options-toggle']//div[@class='uitk-layout-flex']/span"],
     'Origin place': ["//div[@data-test-id='typeahead-originInput']//button"],
     'Destination place': ["//div[@data-test-id='typeahead-destinationInput']//button"],
     'Parentesis place': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[2]/div"],
@@ -81,11 +80,27 @@ dic_xpats = {
     'Airline 3': ["//div[@class='uitk-spacing']/div[3]/div[2]/span[2]"]
     }
 
+dic_xpats_skyscanner = {
+    'Class':["//div[contains(@class, 'SearchDetails_travellerContainer')]"],
+    'Origin place': ["//div[contains(@class, 'SearchDetails_location')]/span[1]"],
+    'Destination place': ["//div[contains(@class, 'SearchDetails_location')]/span[3]"],
+    
+    'Parentesis place': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[2]/div"],
+    'Price': ["(//div[@data-test-id='price-column'])[{quantity_flights}]/div/section/span[2]", "(//div[@data-stid='price-column'])[{quantity_flights}]/div/section/span[2]"],
+    'Flight time': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[1]"],
+    'Stop over': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[3]"],
+    'Stop over place': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[1]", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[3]"],
+    'Airline': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[3]/div"],
+    'Departure time': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[1]/div/div/div[1]/div[1]/div"],
+    'Airline 1': ["//div[@class='uitk-spacing']/div[1]/div[2]/span[2]"],
+    'Airline 2': ["//div[@class='uitk-spacing']/div[2]/div[2]/span[2]"],
+    'Airline 3': ["//div[@class='uitk-spacing']/div[3]/div[2]/span[2]"]
+    }
 #generate dates
 dates = generate_dates(input_dates)
 
 #init dataframe
-df = pd.DataFrame(columns=["Price", "Flight time","Stop over","Stop over place","Airline", "Departure time","Date of flight","Destination place","Origin place","Airline 1","Airline 2","Airline 3"])
+df = pd.DataFrame(columns=["Price", "Flight time","Stop over","Stop over place","Airline", "Departure time","Date of flight","Destination place","Origin place","Airline 1","Airline 2","Airline 3","Class","Page"])
 
 #options for the browser
 chromedriver_autoinstaller.install()# Check if the current version of chromedriver exists and if it doesn't exist, download it automatically,
@@ -163,12 +178,16 @@ try:
                     "Date of flight":date,
                     "Destination place":"",
                     "Origin place":"",
+                    "Class":"",
                     "Airline 1":"",
                     "Airline 2":"",
-                    "Airline 3":""
+                    "Airline 3":"",
+                    "Page": get_page_visited(current_link)
                 }
 
                 #-----------------SCRAPPING DATA------------------#
+                #-- get Origin place
+                get_xpath_data_to_dic("Class", 3)
 
                 #-- get Origin place
                 get_xpath_data_to_dic("Origin place", 3)
@@ -275,7 +294,7 @@ except Exception as e:
 
 finally:
     try:
-        generate_file(df,page)
+        generate_file(df)
     except:
         print("Error al generar el archivo")
     print('Ending program')
