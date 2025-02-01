@@ -11,6 +11,22 @@ from datetime import datetime
 import calendar
 from dateutil import parser
 
+def get_page_visited(url):
+    """
+    Extracts the domain name from a URL to determine the page visited.
+
+    Args:
+        url (str): The URL to extract the domain name from.
+
+    Returns:
+        str: The domain name of the page visited.
+    """
+    parsed_url = urlparse(url)
+    domain = parsed_url.netloc
+    # Extract the main domain (e.g., 'expedia' from 'www.expedia.mx')
+    main_domain = domain.split('.')[1] if 'www.' in domain else domain.split('.')[0]
+    return main_domain
+
 # Function to validate URLs
 def is_valid_url(url):
     """
@@ -98,8 +114,53 @@ def random_delay(start=1, end=3):
     """
     time.sleep(random.uniform(start, end))
 
-# Function to generate a dynamic URL
+
 def generate_dynamic_url(base_url, new_departure_date):
+    """
+    Generates a dynamic URL by updating the departure date.
+
+    Args:
+        base_url (str): The base URL.
+        new_departure_date (str): The new departure date in 'yyyy-mm-dd' format.
+
+    Returns:
+        str: The updated URL.
+    """
+    # Parse the URL
+    url_parts = urlparse(base_url)
+    query_params = parse_qs(url_parts.query)
+    domain = url_parts.netloc
+
+    # Convert new_departure_date to different formats
+    new_departure_date_slash = new_departure_date.replace('-', '/')
+    new_departure_date_dash = new_departure_date
+
+    if 'expedia' in domain:
+        # Update the departure date in the query parameters for Expedia
+        for key in query_params:
+            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
+            query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
+    elif 'skyscanner' in domain:
+        # Update the departure date in the query parameters for Skyscanner
+        for key in query_params:
+            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_dash, param) for param in query_params[key]]
+            query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
+        # Update the path for Skyscanner
+        path_parts = url_parts.path.split('/')
+        for i, part in enumerate(path_parts):
+            if re.match(r'\d{6}', part):
+                path_parts[i] = new_departure_date.replace('-', '')
+        url_parts = url_parts._replace(path='/'.join(path_parts))
+
+    # Reconstruct the URL with updated query parameters
+    updated_query = urlencode(query_params, doseq=True)
+    updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
+
+    return updated_url
+
+
+# Function to generate a dynamic URL
+'''def generate_dynamic_url(base_url, new_departure_date):
     """
     Generates a dynamic URL by updating the departure date.
 
@@ -127,7 +188,7 @@ def generate_dynamic_url(base_url, new_departure_date):
     updated_query = urlencode(query_params, doseq=True)
     updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
     
-    return updated_url
+    return updated_url'''
 
 # Function to generate a list of dates in "dd/mm/yyyy" format
 def generate_dates(months):
@@ -158,7 +219,7 @@ def generate_dates(months):
         'november': 11, 'nov': 11, '11': 11,
         'december': 12, 'dec': 12, '12': 12
     }
-    
+    qty = 0
     # List to store generated dates
     dates = []
     
@@ -172,11 +233,14 @@ def generate_dates(months):
             # Generate dates for each day of the specified month
             for day in range(1, calendar.monthrange(year, month_num)[1] + 1):
                 date = datetime(year, month_num, day)
-                
+                qty += 1
+
                 if date >= today:
                     print(date)
                     print(today)
                     dates.append(date.strftime("%d/%m/%Y"))
+                '''if qty > 4:
+                    break'''
     
     return dates
 
@@ -199,7 +263,7 @@ def add_dict_to_df(dict_, df):
     return df
 
 # Function to generate a CSV file with flight data
-def generate_file(df,page):
+def generate_file(df):
     """
     Generates a CSV file with flight data.
 
@@ -210,10 +274,9 @@ def generate_file(df,page):
         None
     """
     df['Flight type'] = ''
-    df['Class'] = 'Economic'
+    #df['Class'] = 'Economic'
     df['Days to date'] = ''
     df['Day of week'] = ''
-    df['Page'] = page
     df['Date of flight'] = pd.to_datetime(df['Date of flight'], format='%d/%m/%Y', dayfirst=True)
     df['Days to date'] = count_days_to_date(df['Date of flight'])
 
