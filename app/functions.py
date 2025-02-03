@@ -134,13 +134,16 @@ def generate_dynamic_url(base_url, new_departure_date):
     # Convert new_departure_date to different formats
     new_departure_date_slash = new_departure_date.replace('-', '/')
     new_departure_date_dash = new_departure_date
+    page = ""
 
     if 'expedia' in domain:
+        page = 'Expedia'
         # Update the departure date in the query parameters for Expedia
         for key in query_params:
             query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
             query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
     elif 'skyscanner' in domain:
+        page = 'Skyscanner'
         # Update the departure date in the query parameters for Skyscanner
         for key in query_params:
             query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_dash, param) for param in query_params[key]]
@@ -156,7 +159,7 @@ def generate_dynamic_url(base_url, new_departure_date):
     updated_query = urlencode(query_params, doseq=True)
     updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
 
-    return updated_url
+    return updated_url,page
 
 
 # Function to generate a dynamic URL

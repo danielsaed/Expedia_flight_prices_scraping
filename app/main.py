@@ -45,7 +45,7 @@ dic_input_flight_links = {
 }
 
 #input the months that you want to search, can be in any format, numbers, short name or long name
-input_dates = ["feb"]
+input_dates = ["feb","mar","apr"]
 #input_dates = ["jan"]
 
 #----------------------------------------#
@@ -84,18 +84,22 @@ dic_xpats_skyscanner = {
     'Class':["//div[contains(@class, 'SearchDetails_travellerContainer')]"],
     'Origin place': ["//div[contains(@class, 'SearchDetails_location')]/span[1]"],
     'Destination place': ["//div[contains(@class, 'SearchDetails_location')]/span[3]"],
+    'Parentesis place': ["//div[contains(@class,'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegInfo_routePartialDepart')]/span[2]//span","//div[contains(@class, 'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegInfo_routePartialArrive')]/span[2]//span"],
+    'Price': ["//div[contains(@class, 'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class, 'Price_mainPriceContainer')]"],
+    'Flight time': ["//div[contains(@class, 'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegInfo_stopsContainer')]/span"],
+    'Stop over': ["//div[contains(@class, 'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegInfo_stopsContainer')]/div[2]/span"],
+    'Stop over place': ["//div[contains(@class, 'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegInfo_stopsContainer')]/div[2]/div/span//span", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[1]", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[3]"],
+
+    'Airline': ["//div[contains(@class,'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegLogo_legImage__NjU4O')]//img","//div[contains(@class,'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegDetails_container')]//div[contains(@class,'LogoImage_container')]/span[1]"],
     
-    'Parentesis place': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[2]/div"],
-    'Price': ["(//div[@data-test-id='price-column'])[{quantity_flights}]/div/section/span[2]", "(//div[@data-stid='price-column'])[{quantity_flights}]/div/section/span[2]"],
-    'Flight time': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[1]"],
-    'Stop over': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div/span[3]"],
-    'Stop over place': ["(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/div", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[1]", "(//div[@data-stid='tertiary-section'])[{quantity_flights}]/div[2]/span[3]"],
-    'Airline': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[3]/div"],
-    'Departure time': ["(//div[@data-stid='secondary-section'])[{quantity_flights}]/div[1]/div/div/div[1]/div[1]/div"],
-    'Airline 1': ["//div[@class='uitk-spacing']/div[1]/div[2]/span[2]"],
+    'Departure time': ["//div[contains(@class, 'FlightsResults_dayViewItems')]/div[{quantity_flights}]//div[contains(@class,'LegInfo_routePartialDepart')]/span[1]//span"],
+
+    'Airline 1': ["//div[@class='uitk-spacing']/div[1]/div[2]/span[2]"],'ResultsSummary_buttonContainer__MzA5Z'
     'Airline 2': ["//div[@class='uitk-spacing']/div[2]/div[2]/span[2]"],
     'Airline 3': ["//div[@class='uitk-spacing']/div[3]/div[2]/span[2]"]
     }
+
+
 #generate dates
 dates = generate_dates(input_dates)
 
@@ -135,7 +139,7 @@ try:
     driver = uc.Chrome(options=chrome_options)
     #driver.get(links[0][0])
 
-    for current_link,date in links:
+    for current_link,page,date in links:
         
         quantity_flights=1
         
@@ -159,8 +163,12 @@ try:
         driver.switch_to.window(driver.window_handles[-1])
         print("Switched back to new tab")
 
-        use_xpath(driver,"//li[@data-test-id='offer-listing']",180)
-        time.sleep(5)
+        if page == "Expedia":
+            use_xpath(driver,"//li[@data-test-id='offer-listing']",180)
+            time.sleep(5)
+        else:
+            use_xpath(driver,"//div[contains(@class, 'FlightsResults_dayViewItems')]",180)
+            time.sleep(5)
         #elements = driver.find_elements(By.XPATH, "//div[@data-test-id='price-column']")
         elements = driver.find_elements(By.XPATH, "//li[@data-test-id='offer-listing']")
 
@@ -182,7 +190,7 @@ try:
                     "Airline 1":"",
                     "Airline 2":"",
                     "Airline 3":"",
-                    "Page": get_page_visited(current_link)
+                    "Page": page
                 }
 
                 #-----------------SCRAPPING DATA------------------#
