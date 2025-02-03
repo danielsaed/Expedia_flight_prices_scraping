@@ -5799,3 +5799,297 @@ Price,Flight time,Stop over,Stop over place,Airline,Departure time,Date of fligh
 25241,30 h 30 min,1,14 h 24 min en SFO,United operado por United y All Nippon Airways,07:30:00,2025-04-30 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,87,Wednesday,expedia
 25241,34 h 45 min,1,17 h 10 min en ORD,United,14:10:00,2025-04-30 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,87,Wednesday,expedia
 28006,29 h 40 min,1,13 h 28 min en SFO,United,17:15:00,2025-04-30 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,87,Wednesday,expedia
+"MXN$16,690",19 h 20 min,1 escala,,Aerolíneas múltiples,07:20:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$16,690",30 h 40 min,1 escala,,Aerolíneas múltiples,20:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$30,567",15 h 35 min,Vuelo sin escalas,,Japan Airlines operado por Aeromexico,23:45:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$18,528",36 h 15 min,1 escala,,Air Canada,13:25:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Monday,Expedia
+"MXN$18,911",43 h 10 min,2 escalas,,Turkish Airlines,09:35:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$28,049",19 h 25 min,1 escala,,American Airlines,08:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",17 h 45 min,1 escala,,United,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$31,099",18 h 25 min,1 escala,,Aerolíneas múltiples,06:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$31,197",18 h 25 min,1 escala,,American Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",17 h 45 min,1 escala,,Aerolíneas múltiples operado por United,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",17 h 55 min,1 escala,,United,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,Aerolíneas múltiples,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",18 h 25 min,1 escala,,United,05:45:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$27,951",21 h 25 min,1 escala,,Japan Airlines operado por American Airlines,06:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",18 h 35 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,05:45:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",19 h 40 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$20,126",26 h 20 min,2 escalas,,Aerolíneas múltiples,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$20,126",23 h 55 min,2 escalas,,Aerolíneas múltiples,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$20,126",29 h 45 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$20,126",32 h 45 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$32,042",21 h 55 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,08:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",24 h,1 escala,,United operado por United y All Nippon Airways,13:50:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Monday,Expedia
+"MXN$32,004",29 h 50 min,1 escala,,United,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$32,004",30 h 10 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$16,690",19 h 20 min,1 escala,,Aerolíneas múltiples,07:20:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$16,690",30 h 40 min,1 escala,,Aerolíneas múltiples,20:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$30,567",15 h 35 min,Vuelo sin escalas,,Japan Airlines operado por Aeromexico,23:45:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$18,528",36 h 15 min,1 escala,,Air Canada,13:25:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Monday,Expedia
+"MXN$18,911",43 h 10 min,2 escalas,,Turkish Airlines,09:35:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$28,049",19 h 25 min,1 escala,,American Airlines,08:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",17 h 45 min,1 escala,,United,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$31,099",18 h 25 min,1 escala,,Aerolíneas múltiples,06:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$31,197",18 h 25 min,1 escala,,American Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",17 h 45 min,1 escala,,Aerolíneas múltiples operado por United,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",17 h 55 min,1 escala,,United,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,Aerolíneas múltiples,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",18 h 25 min,1 escala,,United,05:45:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$27,951",21 h 25 min,1 escala,,Japan Airlines operado por American Airlines,06:00:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,042",18 h 35 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,05:45:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",19 h 40 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$20,126",26 h 20 min,2 escalas,,Aerolíneas múltiples,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$20,126",23 h 55 min,2 escalas,,Aerolíneas múltiples,06:05:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$20,126",29 h 45 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$20,126",32 h 45 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$32,042",21 h 55 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,08:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Monday,Expedia
+"MXN$32,004",24 h,1 escala,,United operado por United y All Nippon Airways,13:50:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Monday,Expedia
+"MXN$32,004",30 h 10 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$32,004",29 h 50 min,1 escala,,United,18:10:00,2025-02-03 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Monday,Expedia
+"MXN$16,690",19 h 20 min,1 escala,,Aerolíneas múltiples,07:20:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",30 h 40 min,1 escala,,Aerolíneas múltiples,20:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$31,323",14 h 45 min,Vuelo sin escalas,,All Nippon Airways,00:50:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$30,567",15 h 35 min,Vuelo sin escalas,,Japan Airlines operado por Aeromexico,23:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,471",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",19 h 20 min,1 escala,,Aerolíneas múltiples,07:20:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",30 h 40 min,1 escala,,Aerolíneas múltiples,20:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$31,323",14 h 45 min,Vuelo sin escalas,,All Nippon Airways,00:50:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$30,567",15 h 35 min,Vuelo sin escalas,,Japan Airlines operado por Aeromexico,23:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,471",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$19,299",24 h 30 min,1 escala,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$19,437",32 h 5 min,2 escalas,,Turkish Airlines,09:35:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$19,437",36 h 5 min,2 escalas,,Turkish Airlines,05:35:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$19,299",36 h 15 min,1 escala,,Air Canada,13:25:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Tuesday,Expedia
+"MXN$17,810",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$17,810",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",17 h 45 min,1 escala,,United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$27,951",21 h 25 min,1 escala,,Japan Airlines operado por American Airlines,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,042",17 h 45 min,1 escala,,Aerolíneas múltiples operado por United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$31,099",18 h 25 min,1 escala,,Aerolíneas múltiples,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$31,197",18 h 25 min,1 escala,,American Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$28,049",19 h 25 min,1 escala,,American Airlines,08:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$25,173",30 h 40 min,2 escalas,,Emirates,19:40:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",17 h 55 min,1 escala,,United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",18 h 35 min,1 escala,,United operado por United y All Nippon Airways,05:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",18 h 25 min,1 escala,,United,05:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$25,173",35 h 50 min,2 escalas,,Emirates,19:40:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",19 h 40 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$20,126",26 h 10 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",19 h 20 min,1 escala,,Aerolíneas múltiples,07:20:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",30 h 40 min,1 escala,,Aerolíneas múltiples,20:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$31,323",14 h 45 min,Vuelo sin escalas,,All Nippon Airways,00:50:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$30,567",15 h 35 min,Vuelo sin escalas,,Japan Airlines operado por Aeromexico,23:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,471",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$19,299",24 h 30 min,1 escala,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$19,437",32 h 5 min,2 escalas,,Turkish Airlines,09:35:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$19,437",36 h 5 min,2 escalas,,Turkish Airlines,05:35:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$19,299",36 h 15 min,1 escala,,Air Canada,13:25:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Tuesday,Expedia
+"MXN$17,810",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$17,810",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",17 h 45 min,1 escala,,United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$27,951",21 h 25 min,1 escala,,Japan Airlines operado por American Airlines,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,042",17 h 45 min,1 escala,,Aerolíneas múltiples operado por United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$31,099",18 h 25 min,1 escala,,Aerolíneas múltiples,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$31,197",18 h 25 min,1 escala,,American Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$28,049",19 h 25 min,1 escala,,American Airlines,08:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$25,173",30 h 40 min,2 escalas,,Emirates,19:40:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",17 h 55 min,1 escala,,United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",18 h 35 min,1 escala,,United operado por United y All Nippon Airways,05:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",18 h 25 min,1 escala,,United,05:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$25,173",35 h 50 min,2 escalas,,Emirates,19:40:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",19 h 40 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$20,126",26 h 10 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",19 h 20 min,1 escala,,Aerolíneas múltiples,07:20:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$16,690",30 h 40 min,1 escala,,Aerolíneas múltiples,20:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$31,323",14 h 45 min,Vuelo sin escalas,,All Nippon Airways,00:50:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$30,567",15 h 35 min,Vuelo sin escalas,,Japan Airlines operado por Aeromexico,23:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$16,471",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$19,299",24 h 30 min,1 escala,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$19,437",32 h 5 min,2 escalas,,Turkish Airlines,09:35:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$19,437",36 h 5 min,2 escalas,,Turkish Airlines,05:35:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$19,299",36 h 15 min,1 escala,,Air Canada,13:25:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Day flight,Económica,0,Tuesday,Expedia
+"MXN$17,810",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$17,810",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",17 h 45 min,1 escala,,United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$27,951",21 h 25 min,1 escala,,Japan Airlines operado por American Airlines,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,042",17 h 45 min,1 escala,,Aerolíneas múltiples operado por United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$31,099",18 h 25 min,1 escala,,Aerolíneas múltiples,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$31,197",18 h 25 min,1 escala,,American Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$28,049",19 h 25 min,1 escala,,American Airlines,08:00:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$25,173",30 h 40 min,2 escalas,,Emirates,19:40:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",17 h 55 min,1 escala,,United,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",18 h 35 min,1 escala,,United operado por United y All Nippon Airways,05:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,042",18 h 15 min,1 escala,,All Nippon Airways operado por United y All Nippon Airways,06:05:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",18 h 25 min,1 escala,,United,05:45:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Morning flight,Económica,0,Tuesday,Expedia
+"MXN$25,173",35 h 50 min,2 escalas,,Emirates,19:40:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$32,004",19 h 40 min,1 escala,,United operado por United y All Nippon Airways,18:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"MXN$20,126",26 h 10 min,2 escalas,,Aerolíneas múltiples,18:10:00,2025-02-04 00:00:00,Tokio (TYO-Todos los aeropuertos),Ciudad de México (MEX-Aeropuerto Internacional de la Ciudad de México),,,,Night flight,Económica,0,Tuesday,Expedia
+"$11,281",26 h 55 min,1 escala,,"Volaris, ZIPAIR",20:30:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$10,898",25 h 25 min,2 escalas,,Varias aerolíneas,22:00:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$16,534",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$13,264",25 h 00 min,2 escalas,,Varias aerolíneas,22:25:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$16,415",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$16,415",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$30,777",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$31,390",14 h 45 min,directo,,ANA,00:50:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$32,174",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,124",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,174",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$19,138",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$43,245",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$92,391",23 h 50 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$163,172",23 h 50 min,2 escalas,,"Air Canada, Japan Airlines",01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$11,026",26 h 55 min,1 escala,,"Volaris, ZIPAIR",20:30:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$31,387",14 h 45 min,directo,,ANA,00:50:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$10,490",54 h 55 min,2 escalas,,"Viva, ZIPAIR",22:00:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$30,777",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$14,729",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$14,729",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$12,843",24 h 50 min,2 escalas,,"Frontier, Air Canada",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$15,925",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$13,328",24 h 50 min,2 escalas,,Varias aerolíneas,22:35:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$19,004",23 h 55 min,1 escala,,"WestJet, Japan Airlines",01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$21,528",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$15,048",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$32,171",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,121",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,171",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$43,231",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$36,078",23 h 20 min,1 escala,,"Volaris, ANA",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$11,301",26 h 55 min,1 escala,,"Volaris, ZIPAIR",20:30:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$11,130",25 h 25 min,2 escalas,,Varias aerolíneas,22:00:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$13,251",25 h 00 min,2 escalas,,Varias aerolíneas,22:25:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$15,925",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$29,803",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$30,540",14 h 45 min,directo,,ANA,00:50:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$31,241",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$31,241",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$31,241",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$19,138",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$42,111",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Morning flight,Class not found,0,Tuesday,Kayak
+"$102,127",23 h 50 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$107,507",23 h 35 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$169,559",23 h 50 min,2 escalas,,"Air Canada, Japan Airlines",01:10:00,2025-02-04 00:00:00,Destination place not found,Origin place not found,,,,Night flight,Class not found,0,Tuesday,Kayak
+"$11,301",26 h 55 min,1 escala,,"Volaris, ZIPAIR",20:30:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$11,130",25 h 25 min,2 escalas,,Varias aerolíneas,22:00:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$29,803",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$30,540",14 h 45 min,directo,,ANA,00:50:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$13,251",25 h 00 min,2 escalas,,Varias aerolíneas,22:25:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$15,925",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$31,241",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$31,241",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$31,241",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$19,138",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$42,111",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-04 00:00:00,,,,,,Morning flight,,0,Tuesday,Kayak
+"$102,127",23 h 50 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$107,507",23 h 35 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$169,559",23 h 50 min,2 escalas,,"Air Canada, Japan Airlines",01:10:00,2025-02-04 00:00:00,,,,,,Night flight,,0,Tuesday,Kayak
+"$11,028",25 h 30 min,2 escalas,,"Volaris, ZIPAIR",21:55:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$30,540",14 h 45 min,directo,,ANA,00:50:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$10,490",54 h 55 min,2 escalas,,"Viva, ZIPAIR",22:00:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$29,803",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$14,395",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$14,395",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$15,925",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$13,329",24 h 50 min,2 escalas,,Varias aerolíneas,22:35:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$18,942",23 h 55 min,1 escala,,"WestJet, Japan Airlines",01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$15,048",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$20,998",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$31,241",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$31,241",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$31,241",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$42,111",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$36,004",23 h 20 min,1 escala,,"Volaris, ANA",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$102,127",23 h 50 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$104,368",23 h 50 min,2 escalas,,"Air Canada, Japan Airlines",01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$11,301",26 h 55 min,1 escala,,"Volaris, ZIPAIR",20:30:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$11,130",25 h 25 min,2 escalas,,Varias aerolíneas,22:00:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$30,777",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$31,390",14 h 45 min,directo,,ANA,00:50:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$13,251",25 h 00 min,2 escalas,,Varias aerolíneas,22:25:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$15,925",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$32,174",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$32,124",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$32,174",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$19,138",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$43,245",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Morning flight,Económica,0,Tuesday,Kayak
+"$102,127",23 h 50 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$107,507",23 h 35 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$169,559",23 h 50 min,2 escalas,,"Air Canada, Japan Airlines",01:10:00,2025-02-04 00:00:00,Tokio,Ciudad de México,,,,Night flight,Económica,0,Tuesday,Kayak
+"$11,028",25 h 30 min,2 escalas,,"Volaris, ZIPAIR",21:55:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$31,387",14 h 45 min,directo,,ANA,00:50:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$10,490",54 h 55 min,2 escalas,,"Viva, ZIPAIR",22:00:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$30,777",15 h 35 min,directo,,Japan Airlines,23:45:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$30,991",15 h 35 min,directo,,Aeromexico,23:45:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$14,729",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$14,729",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$15,925",23 h 50 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$13,329",24 h 50 min,2 escalas,,Varias aerolíneas,22:35:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$18,942",23 h 55 min,1 escala,,"WestJet, Japan Airlines",01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$16,352",24 h 20 min,2 escalas,,Air Canada,01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$15,048",24 h 50 min,2 escalas,,"Volaris, Air Canada",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$21,528",24 h 25 min,2 escalas,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$32,171",17 h 55 min,1 escala,,ANA,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,121",18 h 15 min,1 escala,,ANA,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",17 h 55 min,1 escala,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,171",18 h 25 min,1 escala,,ANA,05:45:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",18 h 15 min,1 escala,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$32,004",18 h 25 min,1 escala,,United Airlines,05:45:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$43,231",23 h 55 min,1 escala,,WestJet,01:05:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$36,004",23 h 20 min,1 escala,,"Volaris, ANA",00:40:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$77,423",24 h 05 min,2 escalas,,"American Airlines, Japan Airlines",06:00:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$88,420",23 h 55 min,2 escalas,,United Airlines,06:05:00,2025-02-05 00:00:00,,,,,,Morning flight,,1,Wednesday,Kayak
+"$102,127",23 h 50 min,2 escalas,,"Air Canada, ANA",01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak
+"$104,368",23 h 50 min,2 escalas,,"Air Canada, Japan Airlines",01:10:00,2025-02-05 00:00:00,,,,,,Night flight,,1,Wednesday,Kayak

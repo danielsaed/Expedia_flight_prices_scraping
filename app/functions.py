@@ -132,34 +132,34 @@ def generate_dynamic_url(base_url, new_departure_date):
     domain = url_parts.netloc
 
     # Convert new_departure_date to different formats
-    new_departure_date_slash = new_departure_date.replace('-', '/')
     new_departure_date_dash = new_departure_date
-    page = ""
+    # Convert the string to a datetime object
+    date_obj = datetime.strptime(new_departure_date, "%d/%m/%Y")
 
+    # Format the datetime object to the desired format
+    formatted_date = date_obj.strftime("%Y-%m-%d")
+
+    page = ""
     if 'expedia' in domain:
-        page = 'Expedia'
+        page = "Expedia"
         # Update the departure date in the query parameters for Expedia
         for key in query_params:
-            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
+            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_dash.replace('-', '/'), param) for param in query_params[key]]
             query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
-    elif 'skyscanner' in domain:
-        page = 'Skyscanner'
-        # Update the departure date in the query parameters for Skyscanner
-        for key in query_params:
-            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_dash, param) for param in query_params[key]]
-            query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
-        # Update the path for Skyscanner
+    elif 'kayak' in domain:
+        page = "Kayak"
+        # Update the path for Kayak
         path_parts = url_parts.path.split('/')
         for i, part in enumerate(path_parts):
-            if re.match(r'\d{6}', part):
-                path_parts[i] = new_departure_date.replace('-', '')
+            if re.match(r'\d{4}-\d{2}-\d{2}', part):
+                path_parts[i] = formatted_date
         url_parts = url_parts._replace(path='/'.join(path_parts))
 
     # Reconstruct the URL with updated query parameters
     updated_query = urlencode(query_params, doseq=True)
     updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
 
-    return updated_url,page
+    return updated_url, page
 
 
 # Function to generate a dynamic URL
@@ -242,8 +242,8 @@ def generate_dates(months):
                     print(date)
                     print(today)
                     dates.append(date.strftime("%d/%m/%Y"))
-                '''if qty > 4:
-                    break'''
+                if qty > 4:
+                    break
     
     return dates
 
