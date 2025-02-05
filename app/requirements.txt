@@ -1,0 +1,6 @@
+fake-useragent
+undetected-chromedriver
+pandas
+selenium
+pyvirtualdisplay
+chromedriver-autoinstaller==0.6.2

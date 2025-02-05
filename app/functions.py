@@ -9,7 +9,6 @@ import random
 import pandas as pd
 from datetime import datetime
 import calendar
-from dateutil import parser
 
 def get_page_visited(url):
     """
@@ -294,10 +293,10 @@ def generate_file(df):
 
     
 
-    df_excel = pd.read_csv('data\\flights_data.csv')
+    df_excel = pd.read_csv(r'D:\Github\flight_prices_check\data\flights_data.csv')
     df = pd.concat([df_excel, df], ignore_index=True)
     df.drop_duplicates()
-    df.to_csv(r"data\\flights_data.csv", index=False)
+    df.to_csv(r"..data/flights_data.csv", index=False)
     print('Output file generated')
 
 # Function to count the number of days from today to a target date
