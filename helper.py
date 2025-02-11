@@ -54,14 +54,14 @@ def validate_flight_data(flight_data):
     Returns:
         None: Ends the program if an invalid entry is found.
     """
-    for key, value in flight_data.items():
+    for value in flight_data:
         
         # Check that the third element is a valid URL
         if not is_valid_url(value):
-            print(f"Invalid URL for key {key}: {value}")
+            print(f"Invalid URL for key {value}")
             sys.exit(1)
         
-        print(f"Valid entry for key {key}: {value}")
+        print(f"Valid entry for key {value}")
 
 # Function to validate and convert input dates
 def validate_dates(dates):
@@ -160,38 +160,6 @@ def generate_dynamic_url(base_url, new_departure_date):
 
     return updated_url, page
 
-
-# Function to generate a dynamic URL
-'''def generate_dynamic_url(base_url, new_departure_date):
-    """
-    Generates a dynamic URL by updating the departure date.
-
-    Args:
-        base_url (str): The base URL.
-        new_departure_date (str): The new departure date in 'yyyy-mm-dd' format.
-
-    Returns:
-        str: The updated URL.
-    """
-    # Parse the URL
-    url_parts = urlparse(base_url)
-    query_params = parse_qs(url_parts.query)
-    
-    # Convert new_departure_date to different formats
-    new_departure_date_slash = new_departure_date.replace('-', '/')
-    new_departure_date_dash = new_departure_date
-    
-    # Update the departure date in the query parameters
-    for key in query_params:
-        query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
-        query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
-    
-    # Reconstruct the URL with updated query parameters
-    updated_query = urlencode(query_params, doseq=True)
-    updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
-    
-    return updated_url'''
-
 # Function to generate a list of dates in "dd/mm/yyyy" format
 def generate_dates(months):
     """
@@ -224,9 +192,10 @@ def generate_dates(months):
     qty = 0
     # List to store generated dates
     dates = []
-    
+
     # Iterate over the input months list
     for month in months:
+
         month_str = str(month).strip().lower()
         if month_str in month_map:
             month_num = month_map[month_str]
@@ -241,7 +210,7 @@ def generate_dates(months):
                     print(date)
                     print(today)
                     dates.append(date.strftime("%d/%m/%Y"))
-                if qty > 4:
+                if qty > 12:
                     break
     
     return dates
@@ -291,12 +260,16 @@ def generate_file(df):
     df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
     df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Morning flight'
 
+    df['Scrapped date'] = datetime.now().strftime('%Y-%m-%d')
     
+    try:
+        df_excel = pd.read_csv(r'data/flights_data.csv')
+        df = pd.concat([df_excel, df], ignore_index=True)
+    except:
+        print('No file found')
 
-    df_excel = pd.read_csv(r'D:\Github\flight_prices_check\data\flights_data.csv')
-    df = pd.concat([df_excel, df], ignore_index=True)
     df.drop_duplicates()
-    df.to_csv(r"..data/flights_data.csv", index=False)
+    df.to_csv(r"data/flights_data.csv", index=False)
     print('Output file generated')
 
 # Function to count the number of days from today to a target date
