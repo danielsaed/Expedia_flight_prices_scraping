@@ -210,8 +210,8 @@ def generate_dates(months):
                     print(date)
                     print(today)
                     dates.append(date.strftime("%d/%m/%Y"))
-                if qty > 12:
-                    break
+                '''if qty > 12:
+                    break'''
     
     return dates
 
