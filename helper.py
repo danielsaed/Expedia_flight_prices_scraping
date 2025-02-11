@@ -117,46 +117,67 @@ def random_delay(start=1, end=3):
 def generate_dynamic_url(base_url, new_departure_date):
     """
     Generates a dynamic URL by updating the departure date.
+    Handles both expedia.com and expedia.mx URLs differently.
 
     Args:
         base_url (str): The base URL.
-        new_departure_date (str): The new departure date in 'yyyy-mm-dd' format.
+        new_departure_date (str): The new departure date in 'dd/mm/yyyy' format.
 
     Returns:
-        str: The updated URL.
+        tuple: (str, str) The updated URL and the page type.
     """
     # Parse the URL
     url_parts = urlparse(base_url)
     query_params = parse_qs(url_parts.query)
     domain = url_parts.netloc
 
-    # Convert new_departure_date to different formats
-    new_departure_date_dash = new_departure_date
     # Convert the string to a datetime object
     date_obj = datetime.strptime(new_departure_date, "%d/%m/%Y")
-
-    # Format the datetime object to the desired format
-    formatted_date = date_obj.strftime("%Y-%m-%d")
-
+    
     page = ""
     if 'expedia' in domain:
         page = "Expedia"
-        # Update the departure date in the query parameters for Expedia
-        for key in query_params:
-            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_dash.replace('-', '/'), param) for param in query_params[key]]
-            query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
+        
+        if 'expedia.mx' in domain:
+            # Format dates for expedia.mx (original format)
+            date_slash = date_obj.strftime("%d/%m/%Y")  # Format: dd/mm/yyyy
+            date_dash = date_obj.strftime("%Y-%m-%d")   # Format: yyyy-mm-dd
+            
+            # Update dates in query parameters for Expedia MX
+            for key in query_params:
+                # Handle dates with slashes (d/m/Y format)
+                query_params[key] = [re.sub(r'\d{1,2}/\d{1,2}/\d{4}', date_slash, param) for param in query_params[key]]
+                # Handle dates with dashes (Y-m-d format)
+                query_params[key] = [re.sub(r'\d{4}-\d{1,2}-\d{1,2}', date_dash, param) for param in query_params[key]]
+        
+        else:  # expedia.com
+
+            date_obj = datetime.strptime(new_departure_date, "%d/%m/%Y")
+    
+            # Format dates for different URL patterns
+            date_slash = date_obj.strftime("%m/%d/%Y")  # US format for URLs (m/d/Y)
+            date_dash = date_obj.strftime("%Y-%m-%d")   # ISO format (Y-m-d)
+            # Update dates in query parameters for Expedia
+            for key in query_params:
+                # Handle dates with slashes (both d/m/Y and m/d/Y formats)
+                query_params[key] = [re.sub(r'\d{1,2}/\d{1,2}/\d{4}', date_slash, param) for param in query_params[key]]
+                # Handle dates with dashes (Y-m-d format)
+                query_params[key] = [re.sub(r'\d{4}-\d{1,2}-\d{1,2}', date_dash, param) for param in query_params[key]]
+        
+            
     elif 'kayak' in domain:
         page = "Kayak"
         # Update the path for Kayak
         path_parts = url_parts.path.split('/')
         for i, part in enumerate(path_parts):
             if re.match(r'\d{4}-\d{2}-\d{2}', part):
-                path_parts[i] = formatted_date
+                path_parts[i] = date_dash
         url_parts = url_parts._replace(path='/'.join(path_parts))
 
     # Reconstruct the URL with updated query parameters
     updated_query = urlencode(query_params, doseq=True)
-    updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
+    updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, 
+                             url_parts.params, updated_query, url_parts.fragment))
 
     return updated_url, page
 
@@ -254,11 +275,24 @@ def generate_file(df):
     # Extract the day of the week
     df['Day of week'] = df['Date of flight'].dt.day_name()
 
-    df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
+    try:
 
-    df.loc[(df['Departure time'] >= pd.to_datetime('18:00', format='%H:%M').time()) | (df['Departure time'] < pd.to_datetime('05:00', format='%H:%M').time()), 'Flight type'] = 'Night flight'
-    df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
-    df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Morning flight'
+        df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
+
+        df.loc[(df['Departure time'] >= pd.to_datetime('18:00', format='%H:%M').time()) | (df['Departure time'] < pd.to_datetime('05:00', format='%H:%M').time()), 'Flight type'] = 'Night flight'
+        df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
+        df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Morning flight'
+
+    except:
+        df['Departure time'] = pd.to_datetime(df['Departure time'], format='mixed').dt.time
+
+        # Define flight types based on departure time
+        df.loc[(df['Departure time'] >= pd.to_datetime('18:00').time()) | 
+            (df['Departure time'] < pd.to_datetime('05:00').time()), 'Flight type'] = 'Night flight'
+        df.loc[(df['Departure time'] >= pd.to_datetime('12:00').time()) & 
+            (df['Departure time'] < pd.to_datetime('18:00').time()), 'Flight type'] = 'Day flight'
+        df.loc[(df['Departure time'] >= pd.to_datetime('05:00').time()) & 
+            (df['Departure time'] < pd.to_datetime('12:00').time()), 'Flight type'] = 'Morning flight'
 
     df['Scrapped date'] = datetime.now().strftime('%Y-%m-%d')
     
