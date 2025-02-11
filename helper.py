@@ -1,4 +1,7 @@
 import sys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 import re
 import time
@@ -6,6 +9,22 @@ import random
 import pandas as pd
 from datetime import datetime
 import calendar
+
+def get_page_visited(url):
+    """
+    Extracts the domain name from a URL to determine the page visited.
+
+    Args:
+        url (str): The URL to extract the domain name from.
+
+    Returns:
+        str: The domain name of the page visited.
+    """
+    parsed_url = urlparse(url)
+    domain = parsed_url.netloc
+    # Extract the main domain (e.g., 'expedia' from 'www.expedia.mx')
+    main_domain = domain.split('.')[1] if 'www.' in domain else domain.split('.')[0]
+    return main_domain
 
 # Function to validate URLs
 def is_valid_url(url):
@@ -35,30 +54,14 @@ def validate_flight_data(flight_data):
     Returns:
         None: Ends the program if an invalid entry is found.
     """
-    for key, value in flight_data.items():
-        # Check that the key is a number
-        if not isinstance(key, int):
-            print(f"Invalid key: {key} (must be a number)")
-            sys.exit(1)
-        
-        # Check that the value is a list with three elements
-        if not isinstance(value, list) or len(value) != 3:
-            print(f"Invalid value for key {key}: {value} (must be a list with three elements)")
-            sys.exit(1)
-        
-        origin, destination, url = value
-        
-        # Check that the first and second elements are strings
-        if not isinstance(origin, str) or not isinstance(destination, str):
-            print(f"Invalid origin or destination for key {key}: {origin}, {destination} (must be strings)")
-            sys.exit(1)
+    for value in flight_data:
         
         # Check that the third element is a valid URL
-        if not is_valid_url(url):
-            print(f"Invalid URL for key {key}: {url}")
+        if not is_valid_url(value):
+            print(f"Invalid URL for key {value}")
             sys.exit(1)
         
-        print(f"Valid entry for key {key}: {value}")
+        print(f"Valid entry for key {value}")
 
 # Function to validate and convert input dates
 def validate_dates(dates):
@@ -96,7 +99,6 @@ def validate_dates(dates):
             print(f"Invalid date: {date}")
             sys.exit(1)
     
-
 # Function to generate a random delay
 def random_delay(start=1, end=3):
     """
@@ -111,7 +113,7 @@ def random_delay(start=1, end=3):
     """
     time.sleep(random.uniform(start, end))
 
-# Function to generate a dynamic URL
+
 def generate_dynamic_url(base_url, new_departure_date):
     """
     Generates a dynamic URL by updating the departure date.
@@ -126,21 +128,37 @@ def generate_dynamic_url(base_url, new_departure_date):
     # Parse the URL
     url_parts = urlparse(base_url)
     query_params = parse_qs(url_parts.query)
-    
+    domain = url_parts.netloc
+
     # Convert new_departure_date to different formats
-    new_departure_date_slash = new_departure_date.replace('-', '/')
     new_departure_date_dash = new_departure_date
-    
-    # Update the departure date in the query parameters
-    for key in query_params:
-        query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_slash, param) for param in query_params[key]]
-        query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
-    
+    # Convert the string to a datetime object
+    date_obj = datetime.strptime(new_departure_date, "%d/%m/%Y")
+
+    # Format the datetime object to the desired format
+    formatted_date = date_obj.strftime("%Y-%m-%d")
+
+    page = ""
+    if 'expedia' in domain:
+        page = "Expedia"
+        # Update the departure date in the query parameters for Expedia
+        for key in query_params:
+            query_params[key] = [re.sub(r'\d{2}/\d{2}/\d{4}', new_departure_date_dash.replace('-', '/'), param) for param in query_params[key]]
+            query_params[key] = [re.sub(r'\d{4}-\d{2}-\d{2}', new_departure_date_dash, param) for param in query_params[key]]
+    elif 'kayak' in domain:
+        page = "Kayak"
+        # Update the path for Kayak
+        path_parts = url_parts.path.split('/')
+        for i, part in enumerate(path_parts):
+            if re.match(r'\d{4}-\d{2}-\d{2}', part):
+                path_parts[i] = formatted_date
+        url_parts = url_parts._replace(path='/'.join(path_parts))
+
     # Reconstruct the URL with updated query parameters
     updated_query = urlencode(query_params, doseq=True)
     updated_url = urlunparse((url_parts.scheme, url_parts.netloc, url_parts.path, url_parts.params, updated_query, url_parts.fragment))
-    
-    return updated_url
+
+    return updated_url, page
 
 # Function to generate a list of dates in "dd/mm/yyyy" format
 def generate_dates(months):
@@ -171,12 +189,13 @@ def generate_dates(months):
         'november': 11, 'nov': 11, '11': 11,
         'december': 12, 'dec': 12, '12': 12
     }
-    
+    qty = 0
     # List to store generated dates
     dates = []
-    
+
     # Iterate over the input months list
     for month in months:
+
         month_str = str(month).strip().lower()
         if month_str in month_map:
             month_num = month_map[month_str]
@@ -185,8 +204,14 @@ def generate_dates(months):
             # Generate dates for each day of the specified month
             for day in range(1, calendar.monthrange(year, month_num)[1] + 1):
                 date = datetime(year, month_num, day)
+                qty += 1
+
                 if date >= today:
+                    print(date)
+                    print(today)
                     dates.append(date.strftime("%d/%m/%Y"))
+                if qty > 12:
+                    break
     
     return dates
 
@@ -220,7 +245,14 @@ def generate_file(df):
         None
     """
     df['Flight type'] = ''
-    df['Class'] = 'Economic'
+    #df['Class'] = 'Economic'
+    df['Days to date'] = ''
+    df['Day of week'] = ''
+    df['Date of flight'] = pd.to_datetime(df['Date of flight'], format='%d/%m/%Y', dayfirst=True)
+    df['Days to date'] = count_days_to_date(df['Date of flight'])
+
+    # Extract the day of the week
+    df['Day of week'] = df['Date of flight'].dt.day_name()
 
     df['Departure time'] = pd.to_datetime(df['Departure time'], format='%H:%M').dt.time
 
@@ -228,5 +260,57 @@ def generate_file(df):
     df.loc[(df['Departure time'] >= pd.to_datetime('12:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('18:00', format='%H:%M').time()), 'Flight type'] = 'Day flight'
     df.loc[(df['Departure time'] >= pd.to_datetime('5:00', format='%H:%M').time()) & (df['Departure time'] < pd.to_datetime('12:00', format='%H:%M').time()), 'Flight type'] = 'Morning flight'
 
-    df.to_csv(r"data\\flights_data.csv", index=False)
+    df['Scrapped date'] = datetime.now().strftime('%Y-%m-%d')
+    
+    try:
+        df_excel = pd.read_csv(r'data/flights_data.csv')
+        df = pd.concat([df_excel, df], ignore_index=True)
+    except:
+        print('No file found')
+
+    df.drop_duplicates()
+    df.to_csv(r"data/flights_data.csv", index=False)
     print('Output file generated')
+
+# Function to count the number of days from today to a target date
+def count_days_to_date(date_series):
+    """
+    Counts the number of days from today to the target date.
+
+    Args:
+        target_date (str): The target date in 'yyyy-mm-dd' format.
+
+    Returns:
+        int: The number of days from today to the target date.
+    """
+    today = datetime.today()
+    days_to_date = date_series.apply(lambda x: (x - today).days)
+    return days_to_date
+
+# Function to get the content inside the second pair of parentheses
+def get_second_parentheses_content(text):
+    """
+    Gets the content inside the second pair of parentheses from a string.
+
+    Args:
+        text (str): The input string.
+
+    Returns:
+        str: The content inside the second pair of parentheses, or an empty string if not found.
+    """
+    # Use regular expression to find all content inside parentheses
+    matches = re.findall(r'\(.*?\)', text)
+    # Return the content inside the second pair of parentheses if it exists
+    first_content = matches[0] if len(matches) >= 1 else ""
+    second_content = matches[1] if len(matches) >= 2 else ""
+    return first_content, second_content
+
+# 
+def use_xpath(driver,xpath,time):
+    '''
+    Function to use the xpath of an element and wait for it to appear
+    args:   
+        xpath: the xpath of the element
+        time: the time to wait for the element
+    '''
+    return WebDriverWait(driver, time).until(EC.presence_of_element_located((By.XPATH, xpath)))
