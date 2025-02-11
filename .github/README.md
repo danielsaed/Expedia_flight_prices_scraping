@@ -24,7 +24,7 @@ Web scrapping from Expedia fligth section, using `selenium` with `undetected-chr
 Scrapped page preview
 
 
-https://www.expedia.mx/Flights-Search?leg1=from%3ACiudad%20de%20M%C3%A9xico%20%28MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico%29%2Cto%3ATokio%20%28TYO-Todos%20los%20aeropuertos%29%2Cdeparture%3A18%2F07%2F2025TANYT%2CfromType%3AU%2CtoType%3AU&mode=search&options=carrier%3A%2Ccabinclass%3A%2Cmaxhops%3A1%2Cnopenalty%3AN&pageId=0&passengers=adults%3A1%2Cchildren%3A0%2Cinfantinlap%3AN&trip=oneway
+[Example link](https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),to:Tokio,%20Jap%C3%B3n%20(TYO-Todos%20los%20aeropuertos),departure:12/02/2025TANYT,fromType:AIRPORT,toType:METROCODE&options=cabinclass:economy&fromDate=12/02/2025&d1=2025-2-12&passengers=adults:1,infantinlap:N) 
 
 ![Dashboard Screenshot](https://github.com/danielsaed/Expedia_flight_prices_scraping/blob/Development-using-undetected_chromedriver/.github/img/Expedia_web.png?raw=true)
 
