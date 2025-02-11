@@ -8324,3 +8324,53 @@ Price,Flight time,Stop over,Stop over place,Airline,Departure time,Date of fligh
 23960,35 h 50 min,2,15 h 5 min en SFO and 45 min en ICN,Aerolíneas múltiples,18:10:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),United 1272,Asiana Airlines 215,Asiana Airlines 108,Night flight,Económica,2,Thursday,Expedia,
 53792,30 h 40 min,1,14 h 15 min en LAX,Aerolíneas múltiples,20:00:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),Aeromexico 648,Singapore Airlines 11,,Night flight,Económica,2,Thursday,Expedia,
 51917,32 h 40 min,1,15 h 22 min en MSP,Delta,14:55:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,2,Thursday,Expedia,
+30945,15 h 35 min,0,Stop over place not found,Aeromexico,23:45:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+30273,14 h 45 min,0,Stop over place not found,All Nippon Airways,00:50:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+18579,24 h 30 min,1,5 h 40 min en YYZ,Air Canada,01:10:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+16516,23 h 50 min,2,1 h 40 min en YYZ and 2 h 15 min en YVR,Air Canada,01:10:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+17146,36 h 5 min,1,17 h 30 min en YYZ,Air Canada,13:25:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+18579,36 h 15 min,1,17 h 25 min en YYZ,Air Canada,13:25:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+17146,24 h 20 min,2,2 h 10 min en YYZ and 2 h 2 min en YUL,Air Canada,01:10:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+29942,18 h 25 min,1,2 h 5 min en DFW,Japan Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+31843,17 h 45 min,1,1 h 14 min en SFO,United,06:05:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+31843,17 h 55 min,1,1 h 39 min en SFO,United,06:05:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+31843,18 h 25 min,1,1 h 56 min en IAH,United,05:45:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+30369,23 h 10 min,1,3 h 55 min en JFK,American Airlines,00:25:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+31843,21 h 55 min,1,4 h 5 min en ORD,United operado por United y All Nippon Airways,08:10:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+31102,32 h 5 min,2,1 h 45 min en CUN and 4 h 40 min en IST,Turkish Airlines,09:35:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+30762,31 h 25 min,1,15 h en DFW,Japan Airlines operado por American Airlines y Japan Airlines,17:00:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+21975,26 h 20 min,2,3 h 9 min en SFO and 3 h 35 min en ICN,Aerolíneas múltiples,06:05:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),United 820,Asiana Airlines 215,Asiana Airlines 178,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+32632,29 h 50 min,1,13 h 35 min en SFO,United,18:10:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+45110,19 h 20 min,1,3 h 10 min en LAX,Aerolíneas múltiples,07:20:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),Aeromexico 646,Singapore Airlines 11,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+32632,30 h 30 min,1,14 h 2 min en IAH,United,17:40:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+32632,32 h 55 min,1,16 h 27 min en IAH,United,15:15:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+34825,30 h 40 min,2,1 h 45 min en BCN and 2 h 20 min en DXB,Emirates,19:40:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,0,Wednesday,Expedia,2025-02-11
+32632,33 h 20 min,1,15 h 30 min en ORD,United operado por United y All Nippon Airways,14:40:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+31612,39 h 50 min,1,22 h 10 min en ORD,All Nippon Airways operado por United y All Nippon Airways,08:10:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+32632,34 h 10 min,1,17 h 54 min en SFO,United,13:50:00,2025-02-12 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Day flight,Económica,0,Wednesday,Expedia,2025-02-11
+31095,43 h 10 min,2,1 h 45 min en CUN and 15 h 55 min en IST,Turkish Airlines,09:35:00,2025-02-12 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,0,Wednesday,Expedia,2025-02-11
+17860,24 h 20 min,1,5 h 45 min en YYZ,Air Canada,01:10:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,1,Thursday,Expedia,2025-02-11
+28172,15 h 35 min,0,Stop over place not found,Aeromexico,23:45:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,1,Thursday,Expedia,2025-02-11
+28386,14 h 45 min,0,Stop over place not found,All Nippon Airways,00:50:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Night flight,Económica,1,Thursday,Expedia,2025-02-11
+19353,24 h 30 min,1,5 h 40 min en YYZ,Air Canada,01:10:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Económica,1,Thursday,Expedia,2025-02-11
+22776,36 h 15 min,1,17 h 25 min en YYZ,Air Canada,13:25:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,1,Thursday,Expedia,2025-02-11
+29069,17 h 55 min,1,1 h 39 min en SFO,United,06:05:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+29069,18 h 25 min,1,1 h 56 min en IAH,United,05:45:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+22658,42 h 15 min,1,23 h 15 min en YUL,Air Canada,07:15:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+32043,18 h 25 min,1,2 h en DFW,Aerolíneas múltiples,06:00:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),American Airlines 1066,Japan Airlines 11,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+32141,18 h 25 min,1,2 h en DFW,American Airlines operado por American Airlines y Japan Airlines,06:00:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+32670,18 h 15 min,1,1 h 59 min en SFO,All Nippon Airways operado por United y All Nippon Airways,06:05:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+29069,21 h 55 min,1,4 h 5 min en ORD,United operado por United y All Nippon Airways,08:10:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+26446,43 h 10 min,2,1 h 45 min en CUN and 15 h 55 min en IST,Turkish Airlines,09:35:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+31885,23 h 10 min,1,3 h 55 min en JFK,American Airlines,00:25:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Night flight,Económica,1,Thursday,Expedia,2025-02-11
+26446,47 h 10 min,2,1 h 45 min en CUN and 20 h 20 min en IST,Turkish Airlines,05:35:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+32632,30 h 40 min,1,14 h 17 min en IAH,United operado por United y All Nippon Airways,17:40:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,1,Thursday,Expedia,2025-02-11
+32632,33 h 5 min,1,16 h 42 min en IAH,United operado por United y All Nippon Airways,15:15:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,1,Thursday,Expedia,2025-02-11
+32632,36 h 5 min,1,19 h 43 min en IAH,United operado por United y All Nippon Airways,12:15:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,1,Thursday,Expedia,2025-02-11
+51659,19 h 20 min,1,3 h 10 min en LAX,Aerolíneas múltiples,07:20:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),Aeromexico 646,Singapore Airlines 11,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+32632,38 h 15 min,1,21 h 52 min en IAH,United operado por United y All Nippon Airways,10:05:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+32632,38 h 45 min,1,20 h 15 min en IAD,United operado por United y All Nippon Airways,09:40:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Morning flight,Económica,1,Thursday,Expedia,2025-02-11
+23960,34 h 10 min,2,3 h 54 min en LAX and 10 h 15 min en ICN,Aerolíneas múltiples,16:45:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),Delta 630,Asiana Airlines 203,Asiana Airlines 106,Day flight,Económica,1,Thursday,Expedia,2025-02-11
+53792,30 h 40 min,1,14 h 15 min en LAX,Aerolíneas múltiples,20:00:00,2025-02-13 00:00:00,Tokio (NRT),Ciudad de México (MEX),Aeromexico 648,Singapore Airlines 11,,Night flight,Económica,1,Thursday,Expedia,2025-02-11
+51917,32 h 40 min,1,15 h 22 min en MSP,Delta,14:55:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,1,Thursday,Expedia,2025-02-11
+29069,31 h 50 min,2,1 h 53 min en IAH and 11 h 46 min en LAX,United,17:40:00,2025-02-13 00:00:00,Tokio (HND),Ciudad de México (MEX),,,,Day flight,Económica,1,Thursday,Expedia,2025-02-11
