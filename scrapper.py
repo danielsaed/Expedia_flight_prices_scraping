@@ -5,7 +5,7 @@ import undetected_chromedriver as uc
 from fake_useragent import UserAgent
 import traceback
 import pandas as pd
-from functions import *
+from app.helper import *
 
 
     
