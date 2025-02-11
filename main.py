@@ -197,7 +197,7 @@ def run():
     #-----------------START AUTOMATION------------------#
     try:
         #initialize the driver
-        driver = uc.Chrome(use_subprocess=True,options=chrome_options)
+        driver = uc.Chrome(use_subprocess=True,options=chrome_options,version_main=132)
         
         driver.get(links[0][0])
 
