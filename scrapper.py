@@ -5,7 +5,9 @@ import undetected_chromedriver as uc
 from fake_useragent import UserAgent
 import traceback
 import pandas as pd
-from app.helper import *
+from helper import *
+import json
+from pyvirtualdisplay import Display
 
 
     
@@ -48,29 +50,37 @@ def run():
         -key: the number of the flight
         -value: a list with the next format: [origin place, destination place, link of the flight]
     '''
+    
 
-    dic_input_flight_links = {
+    with open("input_data.json") as f:
+        config = json.load(f)
+
+    urls = config["flight_urls"]
+    months = [str(item) for item in config["scrape_months"]]
+    
+
+    '''dic_input_flight_links = {
         #1:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Tokio%20(y%20alrededores),%20Tokio%20(prefectura),%20Jap%C3%B3n,to:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),departure:13/02/2025TANYT,fromType:MULTICITY,toType:AIRPORT&options=cabinclass:economy&fromDate=13/02/2025&d1=2025-2-13&passengers=adults:1,infantinlap:N',
         #2:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Recinto%20Arena%20Ciudad%20de%20M%C3%A9xico,%20Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico,to:Tepic,%20Nayarit,%20M%C3%A9xico,departure:29/01/2025TANYT,fromType:POI,toType:CITY&options=cabinclass:economy&fromDate=29/01/2025&d1=2025-1-29&passengers=adults:1,infantinlap:N',
         #3:'https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),to:Tokio,%20Jap%C3%B3n%20(TYO-Todos%20los%20aeropuertos),departure:12/02/2025TANYT,fromType:AIRPORT,toType:METROCODE&options=cabinclass:economy&fromDate=12/02/2025&d1=2025-2-12&passengers=adults:1,infantinlap:N',
         #4:'https://www.skyscanner.com.mx/transport/flights/mexa/tyoa/250307/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&rtn=0'
-        5:'https://www.kayak.com.mx/flights/MEX-NRT/2025-02-14?ucs=1vhvkp2&sort=price_a'
-    }
+        #5:'https://www.kayak.com.mx/flights/MEX-NRT/2025-02-14?ucs=1vhvkp2&sort=price_a'
+    }'''
 
     #input the months that you want to search, can be in any format, numbers, short name or long name
-    input_dates = ["feb"]
+    #input_dates = ["feb"]
     #input_dates = ["jan"]
 
     #----------------------------------------#
 
-    #display = Display(visible=0, size=(800, 800))  
-    #display.start()
+    display = Display(visible=0, size=(800, 800))  
+    display.start()
 
     #-----------------CONFIGURATION------------------#
 
     #validating the input
-    validate_flight_data(dic_input_flight_links)
-    validate_dates(input_dates)
+    validate_flight_data(urls)
+    validate_dates(months)
 
     #init variables
     links = []
@@ -135,9 +145,8 @@ def run():
         'Airline 3': ["//div[@class='uitk-spacing']/div[3]/div[2]/span[2]"]
         }
 
-
     #generate dates
-    dates = generate_dates(input_dates)
+    dates = generate_dates(months)
 
     #init dataframe
     df = pd.DataFrame(columns=["Price", "Flight time","Stop over","Stop over place","Airline", "Departure time","Date of flight","Destination place","Origin place","Airline 1","Airline 2","Airline 3","Class","Page"])
@@ -155,8 +164,7 @@ def run():
         "profile.cookie_controls_mode": 0
     })'''
     options = [
-        #"--headless",  # Hides the browser window
-        
+        #"--headless=new",  # Hides the browser window
         #"--window-size=1200,1200",
         "--ignore-certificate-errors",
         "--lang=es",
@@ -164,16 +172,12 @@ def run():
         "--no-sandbox",
         "--enable-javascript",
         "--allow-running-insecure-content",
-        #"--disable-blink-features=AutomationControlled",
         "--disable-popup-blocking",  # Disable popup blocking
         "--disable-web-security",
         "--disable-site-isolation-trials",
         "--disable-extensions",
-        #"--profile-directory=Default",
-        #"--disable-plugins-discovery",
-        #"--incognito",
         "--disable-infobars",
-        #"--disable-notifications",
+        "--disable-notifications",
         "--disable-automation",
         "--disable-blink-features=AutomationControlled",
         "--disable-blink-features=BlockCredentialedSubresources"
@@ -184,11 +188,11 @@ def run():
 
     #generate the links, dates, the origin and arrival places
     for i in range(len(dates)):
-        for key in dic_input_flight_links:
-            url,page = generate_dynamic_url(dic_input_flight_links[key],dates[i])
+
+        for key in urls:
+            url,page = generate_dynamic_url(key,dates[i])
             links.append([url,page,dates[i]])
     #----------------------------------------#
-
 
     #-----------------START AUTOMATION------------------#
     try:
