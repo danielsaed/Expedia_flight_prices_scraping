@@ -1,23 +1,11 @@
 # Expedia Flight Prices Scraping
 
 Web scrapping from Expedia fligth section, using `selenium` with `undetected-chromedriver`, works locally or with github actions, check [Setup](#setup) for detailed info.
-- Give a link like [Example link](https://www.expedia.mx/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:Ciudad%20de%20M%C3%A9xico,%20M%C3%A9xico%20(MEX-Aeropuerto%20Internacional%20de%20la%20Ciudad%20de%20M%C3%A9xico),to:Tokio,%20Jap%C3%B3n%20(TYO-Todos%20los%20aeropuertos),departure:12/02/2025TANYT,fromType:AIRPORT,toType:METROCODE&options=cabinclass:economy&fromDate=12/02/2025&d1=2025-2-12&passengers=adults:1,infantinlap:N) in input_data.json ( very important to get the link from the expedia [page](#page), does not matter the date since the link will be dynamic )
 
-- Following for the month, example: "scrape_months": [2,3,4] 
+- Important to get the link from the expedia [page](#page), does not matter the date since the link will be dynamic, just get the link when the data is already filtered
 
 
-```json
-
-   "flight_urls": [
-   "www.expedia.com/example_link 1",
-   "www.expedia.com/example_link 2",
-   ],
-   "scrape_months": [2,3,4]
-```
-
-**Executing main.py will scrape the data from the link or links given for February, March, April**
-
-(only tested with expedia.mx links, check generate_dynamic_url on helper.py if you face any porblem related with links)
+- Only tested with expedia.mx and expedia.com links, check generate_dynamic_url on helper.py if you face any porblem related with links
 
 ## Page
 
