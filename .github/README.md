@@ -163,7 +163,5 @@ You can find the scraped data in the `data/flights_data.csv` file after the acti
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## Acknowledgments
-Special thanks to Expedia for the data and Power BI for enabling data visualization.
 
 
