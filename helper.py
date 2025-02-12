@@ -44,7 +44,7 @@ def is_valid_url(url):
         return False
 
 # Validate flight data input
-def validate_flight_data(flight_data):
+def validate_links(flight_data):
     """
     Validates the flight data input.
 
@@ -265,6 +265,9 @@ def generate_file(df):
     Returns:
         None
     """
+
+    df = df[df['Price'] != 'Price not found']
+    
     df['Flight type'] = ''
     #df['Class'] = 'Economic'
     df['Days to date'] = ''
