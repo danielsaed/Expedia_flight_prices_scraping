@@ -94,8 +94,8 @@ for i in range(len(dates)):
 
 
 #-----------------Comment 2 lines if execution is local------------------#
-#display = Display(visible=0, size=(800, 800))  
-#display.start()
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
 
 
